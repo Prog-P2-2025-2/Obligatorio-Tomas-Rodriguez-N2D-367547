@@ -18,9 +18,11 @@ namespace GestionPagos
                     opcion = PedirNro("" +
                                       "" +
                                       "Ingrese opción\n" +
-                                      "1-ListarUsuarios\n"+
-                                      "2-AltaUsuario\n"+
-                                      "2-Mostrar Usuarios de Equipo\n"
+                                      "1-ListarUsuarios\n" +
+                                      "2-AltaUsuario\n" +
+                                      "3-Mostrar Usuarios de Equipo\n"+
+                                      "4-Dado un correo de usuario listar todos los pagos que realizó ese usuario\n"
+
 
 
                                       );
@@ -35,12 +37,15 @@ namespace GestionPagos
                         case 3:
                             ListarUsuarioPorEquipo();
                             break;
+                        case 4:
+                            ListarPagoPorEmailDeUsuario();
+                            break;
                         default:
                             break;
                     }
 
                 }
-                while (opcion != 9);
+                while (opcion != 5);
             }
             catch (Exception e)
             {
@@ -72,11 +77,21 @@ namespace GestionPagos
         }
         private static DateTime PedirFecha(string mensaje)
         {
-            int dia = PedirNro("DIA");
-            int mes = PedirNro("MES");
-            int año = PedirNro("AÑO");
+            try
+            {
+                int dia = PedirNro("DIA");
+                int mes = PedirNro("MES");
+                int año = PedirNro("AÑO");
+                return new DateTime(año, mes, dia);
+            }
+            catch (Exception)
+            {
 
-            return new DateTime(año, mes, dia);
+                throw new Exception("Fecha no valida");
+            }
+            
+
+            
         }
 
         private static void ListarUsuario() {
@@ -105,14 +120,19 @@ namespace GestionPagos
                 string apellido = PedirString("Apellido");
                 string contrasenia = PedirString("Contraseña");
                 DateTime fecha = PedirFecha("Fecha");
+                ListarTodosLosEquipos();
                 string equipo = PedirString("Equipo");
+                
                 Equipo unE = _sistema.ObtenerEquipo(equipo);
 
                 _sistema.AltaUsuario(new Usuario(nombre, apellido, contrasenia, fecha, unE));
 
+                MensajeTitulo($"El Usuario ${nombre} ${apellido} se creo correctamente");
+
             }
             catch (Exception e)
             {
+                
                 MensajeError(e.Message);
 
 
@@ -138,6 +158,50 @@ namespace GestionPagos
                 }
 
             }
+        }
+        private static void ListarTodosLosEquipos()
+        {
+            List<Equipo> aux = _sistema.ListarEquipos();
+
+            if (aux.Count == 0) { throw new Exception("No hay equipos, crea uno"); }
+
+            else {
+                MensajeTitulo("Listado Usuarios por equipo");
+                foreach (Equipo item in aux)
+                {
+                    Console.WriteLine(item);
+                }
+
+            }
+
+        }
+        private static void ListarPagoPorEmailDeUsuario()
+        {
+            string email = PedirString("Email del usuario para listar sus pagos");
+            List<PagoUnico> auxPagoUnico = _sistema.ListarPagosUnicoPorMail(email);
+            List<PagoRecurrente> auxPagoRecurrente = _sistema.ListarPagosRecurrentePorMail(email);
+
+            if (auxPagoUnico.Count == 0 && auxPagoRecurrente.Count == 0)
+            {
+                throw new Exception("El usuario no tiene pagos");
+
+            }
+            else
+            {
+                MensajeTitulo("Listado de pagos unicos");
+                foreach (PagoUnico item in auxPagoUnico)
+                {
+                    Console.WriteLine(item);
+                }
+
+                MensajeTitulo("Listado de pagos Recurrente");
+                foreach (PagoRecurrente item in auxPagoRecurrente)
+                {
+                    Console.WriteLine(item);
+                }
+
+            }
+
         }
 
         private static void MensajeTitulo(string mensaje) 

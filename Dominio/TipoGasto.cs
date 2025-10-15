@@ -18,6 +18,7 @@ namespace Dominio
             Id = _ultimoId++;
             Nombre = nombre;
             Descripcion = descripcion;
+            Validar();
         }
         public void Validar()
         {

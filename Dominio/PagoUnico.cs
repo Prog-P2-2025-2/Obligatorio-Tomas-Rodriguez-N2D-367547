@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Dominio
 {
@@ -17,5 +19,40 @@ namespace Dominio
             FechaPago = fechaPago;
             NroRecibo = nroRecibo;
         }
+
+        public override void Validar()
+        {
+            base.Validar();
+            ValidarFechaPago();
+            ValidarNroRecibo();
+
+        }
+
+        private void ValidarFechaPago()
+        {
+            
+            if (FechaPago == DateTime.MinValue)
+            {
+                throw new Exception("La fecha de pago no puede estar vacía.");
+            }
+        }
+        private void ValidarNroRecibo() 
+        {
+            if (string.IsNullOrEmpty(NroRecibo)) {
+
+                throw new Exception("Numero de recibo no puede ser vacio");
+            }        
+
+        }
+
+        public override string MensajePago()
+        {
+            return $"Fecha de Pago: {FechaPago}\n"+
+                    $"Numero de recibo: {NroRecibo}\n";
+        }
+       
+       
+
+
     }
 }

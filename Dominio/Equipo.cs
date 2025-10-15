@@ -9,20 +9,21 @@ namespace Dominio
 {
     public class Equipo
     {
-        public int id { get; set; }
+        public int Id { get; set; }
         private static int _ultimoId = 0;
         public string Nombre { get; set; }
-        public Equipo (string nombre)
+        public Equipo(string nombre)
         {
-           
-          id = _ultimoId++;
-          Nombre = nombre;
 
+            Id = _ultimoId++;
+            Nombre = nombre;
+            Validar();
         }
 
-        public void Validar() { 
+        public void Validar()
+        {
             ValidarNombre();
-        
+
         }
         private void ValidarNombre()
         {
@@ -30,7 +31,7 @@ namespace Dominio
             {
                 throw new Exception("El nombre del equipo no puede ser vacio");
             }
-            
+
         }
 
 
@@ -39,6 +40,12 @@ namespace Dominio
             Equipo unE = obj as Equipo;
             return unE != null && unE.Nombre == Nombre;
         }
-        
+        public override string ToString()
+        {
+            string respuesta = string.Empty;
+            respuesta += $"-Id:{Id} Nombre{Nombre}";
+            return respuesta;
+        }
+
     }
 }
