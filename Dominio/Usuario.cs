@@ -8,7 +8,7 @@ namespace Dominio
 {
     public class Usuario
     {
-        public int id { get; set; }
+        public int Id { get; set; }
         private static int _ultimoId = 0;
         public string Nombre { get; set; }
         public string Apellido { get; set; }
@@ -19,12 +19,13 @@ namespace Dominio
 
         public Usuario(string nombre, string apellido, string contrasenia, DateTime fechaIncorporacion, Equipo unEquipo) 
         {
-            id = _ultimoId++;
+            Id = _ultimoId++;
             Nombre = nombre;
             Apellido = apellido;
             Contrasenia = contrasenia;
             FechaIncorporacion = fechaIncorporacion;
             UnEquipo = unEquipo;
+            Validar();
 
         }
         public void Validar()
@@ -77,7 +78,7 @@ namespace Dominio
 
             if (ExisteEmail(usuarios, emailGenerado))
             {
-                emailGenerado = emailBaseNombre + emailBaseApellido + id + dominio;
+                emailGenerado = emailBaseNombre + emailBaseApellido + Id + dominio;
             }
            return emailGenerado;
         }
