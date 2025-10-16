@@ -14,16 +14,13 @@ namespace Dominio
         public string Nombre { get; set; }
         public Equipo(string nombre)
         {
-
             Id = _ultimoId++;
             Nombre = nombre;
             Validar();
         }
-
         public void Validar()
         {
             ValidarNombre();
-
         }
         private void ValidarNombre()
         {
@@ -31,10 +28,7 @@ namespace Dominio
             {
                 throw new Exception("El nombre del equipo no puede ser vacio");
             }
-
         }
-
-
         public override bool Equals(object obj)
         {
             Equipo unE = obj as Equipo;
@@ -43,9 +37,8 @@ namespace Dominio
         public override string ToString()
         {
             string respuesta = string.Empty;
-            respuesta += $"-Id:{Id} Nombre{Nombre}";
+            respuesta += $"-Id: {Id} Nombre: {Nombre}";
             return respuesta;
         }
-
     }
 }

@@ -52,7 +52,7 @@ namespace Dominio
         }
         private void ValidarMonto() 
         {
-            if (Monto <= 0) 
+            if (Monto < 0) 
             {
                 throw new Exception("El monto no puede ser menor o igual a 0 ");
             }
@@ -68,10 +68,12 @@ namespace Dominio
 
         public override string ToString()
         {
-            return $"Metodo: {MetodoDePago}\n" +
-                    $"Nombre: {MensajePago()}\n";
+            
+            return $"Metodo de Pago: {MetodoDePago}\n" +
+                   $"Descripcion: {Descripcion}\n" +
+                   $"Monto a pagar: {Monto}\n" +
+                   $"Numero de recibo: {TipoGasto.Nombre}\n" +
+                   $"{MensajePago()}\n";
         }
-
-        
     }
 }
