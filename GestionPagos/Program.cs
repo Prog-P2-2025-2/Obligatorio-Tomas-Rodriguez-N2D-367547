@@ -94,7 +94,6 @@ namespace GestionPagos
             }
             catch (Exception)
             {
-
                 throw new Exception("Fecha no valida");
             }           
         }
@@ -105,8 +104,7 @@ namespace GestionPagos
             if (aux.Count == 0) {
                 MensajeError("No hay usuarios creados");
                 return;
-            }
-            
+            }           
                 MensajeTitulo("Listado Usuarios");
                 foreach (Usuario item in aux) 
                 {
@@ -122,14 +120,11 @@ namespace GestionPagos
                 string contrasenia = PedirContrasenia("Contraseña");
                 DateTime fecha = PedirFecha("Fecha");
                 ListarTodosLosEquipos();
-                string equipo = PedirString("Nombre del Equipo o id");
-                
+                string equipo = PedirString("Nombre del Equipo o id");               
                 Equipo unE = _sistema.ObtenerEquipo(equipo);
                 if(int.TryParse(equipo, out _)) { unE = _sistema.ObtenerEquipo(int.Parse(equipo)); }
-
                 _sistema.AltaUsuario(new Usuario(nombre, apellido, contrasenia, fecha, unE));
-
-                MensajeTitulo($"El Usuario {nombre} {apellido} se creo correctamente");
+               MensajeTitulo($"El Usuario {nombre} {apellido} se creo correctamente");
             }
             catch (Exception e)
             {                
@@ -140,9 +135,7 @@ namespace GestionPagos
         {
             ListarTodosLosEquipos();
             string nombre = PedirString("Nombre del equipo o el id");
-
             List<String> aux = _sistema.ListaUsuarioPorEquipo(nombre);
-
             if (aux.Count == 0)
             {
                MensajeError("No hay usuarios creados");
@@ -157,7 +150,6 @@ namespace GestionPagos
         private static void ListarTodosLosEquipos()
         {
             List<Equipo> aux = _sistema.ListarEquipos();
-
             if (aux.Count == 0) { MensajeError("No hay equipos, crea uno"); }          
                 MensajeTitulo("Listado de Equipos");
                 foreach (Equipo item in aux)
@@ -170,13 +162,11 @@ namespace GestionPagos
             string email = PedirString("Email del usuario para listar sus pagos");
             List<PagoUnico> auxPagoUnico = _sistema.ListarPagosUnicoPorMail(email);
             List<PagoRecurrente> auxPagoRecurrente = _sistema.ListarPagosRecurrentePorMail(email);
-
             if (auxPagoUnico.Count == 0 && auxPagoRecurrente.Count == 0)
             {
                 MensajeError("El usuario no tiene pagos");
                 return;
             }
-
             if (auxPagoUnico.Count > 0)
             {
                 MensajeTitulo("Listado de pagos unicos");
