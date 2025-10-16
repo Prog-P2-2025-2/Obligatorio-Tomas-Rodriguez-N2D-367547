@@ -25,12 +25,10 @@ namespace Dominio
             base.Validar();
             ValidarFechaPago();
             ValidarNroRecibo();
-
         }
 
         private void ValidarFechaPago()
-        {
-            
+        {    
             if (FechaPago == DateTime.MinValue)
             {
                 throw new Exception("La fecha de pago no puede estar vacía.");
@@ -39,20 +37,14 @@ namespace Dominio
         private void ValidarNroRecibo() 
         {
             if (string.IsNullOrEmpty(NroRecibo)) {
-
                 throw new Exception("Numero de recibo no puede ser vacio");
             }        
-
         }
 
         public override string MensajePago()
-        {
-            return $"Fecha de Pago: {FechaPago}\n"+
-                    $"Numero de recibo: {NroRecibo}\n";
+        {   
+            return  $"Numero de recibo: {NroRecibo}\n" +
+                    $"Fecha de Pago: {FechaPago.ToString("dd/MM/yyyy")}\n";                                       
         }
-       
-       
-
-
     }
 }

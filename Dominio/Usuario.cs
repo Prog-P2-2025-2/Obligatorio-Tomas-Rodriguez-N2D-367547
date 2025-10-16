@@ -32,38 +32,46 @@ namespace Dominio
         {
             ValidarNombre();
             ValidarApellido();
-            ValidarPassword();
+            ValidarContrasenia();
             ValidarEquipo();
+            ValidarFechaIncorporacion();
         }
-        public void ValidarNombre()
+        private void ValidarNombre()
         {
             if (string.IsNullOrEmpty(Nombre))
             {
                 throw new Exception("EL NOMBRE NO PUEDE SER VACIO");
             }
         }
-        public void ValidarApellido () 
+        private void ValidarApellido () 
         {
             if (string.IsNullOrEmpty(Apellido))
             {
                 throw new Exception("EL APELLIDO NO PUEDE SER VACIO");
             }
         }
-        public void ValidarPassword()
+        private void ValidarContrasenia()
         {
             if (Contrasenia.Length < 8) {
-                throw new Exception("LA CONTRASEÑA DEBE DE TENER COMO MINIMO 8 CARACTERES");
-            
+                throw new Exception("LA CONTRASEÑA DEBE DE TENER COMO MINIMO 8 CARACTERES");            
             }
         }
 
-        public void ValidarEquipo() 
+        private void ValidarEquipo() 
         {
             if (UnEquipo == null) 
             {
                 throw new Exception("El equipo no puede ser nulo");
             }
         }
+        private void ValidarFechaIncorporacion()
+        {                   
+            if (FechaIncorporacion == DateTime.MinValue)
+            {
+                throw new Exception("La fecha de incorporacion no puede estar vacía.");
+            }
+        }
+        
         public string GenerarEmail(List<Usuario> usuarios)
         {
             string emailBaseNombre = Nombre;
@@ -83,7 +91,7 @@ namespace Dominio
            return emailGenerado;
         }
 
-        public bool ExisteEmail(List<Usuario> usuarios, string mailGenerado) 
+        private bool ExisteEmail(List<Usuario> usuarios, string mailGenerado) 
         {
             foreach (Usuario item in usuarios) {
                 if (item.Email == mailGenerado) { return true; }

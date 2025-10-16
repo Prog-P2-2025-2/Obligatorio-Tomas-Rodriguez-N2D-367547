@@ -6,21 +6,22 @@ namespace GestionPagos
     {
 
         private static Sistema _sistema = new Sistema();
-        
+
         static void Main(string[] args)
         {
-            _sistema.PreCarga();
-            try
+           
+
+            int opcion = 0;
+            do
             {
-                int opcion = 0;
-                do
+                try
                 {
                     opcion = PedirNro("" +
                                       "" +
                                       "Ingrese opción\n" +
                                       "1-ListarUsuarios\n" +
                                       "2-AltaUsuario\n" +
-                                      "3-Mostrar Usuarios de Equipo\n"+
+                                      "3-Mostrar Usuarios de Equipo\n" +
                                       "4-Dado un correo de usuario listar todos los pagos que realizó ese usuario\n"
 
 
@@ -44,14 +45,16 @@ namespace GestionPagos
                             break;
                     }
 
+
                 }
-                while (opcion != 5);
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.Message);
-            }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
+
+                }
+            } while (opcion != 5);
         }
+        
 
 
         private static int PedirNro(string mensaje)
@@ -71,7 +74,7 @@ namespace GestionPagos
         {
             Console.WriteLine(mensaje);
             string texto = Console.ReadLine();
-            if (string.IsNullOrEmpty(texto)) throw new Exception($"{mensaje} vacio, debes de complet el campo para continuar");
+            if (string.IsNullOrEmpty(texto)) throw new Exception($"{mensaje} vacio, debes de completar el campo para continuar");
 
             return texto;
         }
@@ -98,18 +101,17 @@ namespace GestionPagos
             List<Usuario> aux = _sistema.Usuarios();
 
             if (aux.Count == 0) {
-                throw new Exception("No hay usuarios creados");
-
+                MensajeError("No hay usuarios creados");
+                return;
             }
-            else
-            {
+            
                 MensajeTitulo("Listado Usuarios");
                 foreach (Usuario item in aux) 
                 {
                     Console.WriteLine(item);
                 }
 
-            }        
+                 
         }
         private static void AltaUsuario()
         {
@@ -121,13 +123,14 @@ namespace GestionPagos
                 string contrasenia = PedirString("Contraseña");
                 DateTime fecha = PedirFecha("Fecha");
                 ListarTodosLosEquipos();
-                string equipo = PedirString("Equipo");
+                string equipo = PedirString("Nombre del Equipo o id");
                 
                 Equipo unE = _sistema.ObtenerEquipo(equipo);
+                if(int.TryParse(equipo, out _)) { unE = _sistema.ObtenerEquipo(int.Parse(equipo)); }
 
                 _sistema.AltaUsuario(new Usuario(nombre, apellido, contrasenia, fecha, unE));
 
-                MensajeTitulo($"El Usuario ${nombre} ${apellido} se creo correctamente");
+                MensajeTitulo($"El Usuario {nombre} {apellido} se creo correctamente");
 
             }
             catch (Exception e)
@@ -141,38 +144,39 @@ namespace GestionPagos
         }
         private static void ListarUsuarioPorEquipo()
         {
-            string nombre = PedirString("NOMBRE DEL EQUIPO");
+            ListarTodosLosEquipos();
+            string nombre = PedirString("Nombre del equipo o el id");
+
             List<String> aux = _sistema.ListaUsuarioPorEquipo(nombre);
 
             if (aux.Count == 0)
             {
-                throw new Exception("No hay usuarios creados");
-
+               MensajeError("No hay usuarios creados");
+                return;
             }
-            else
-            {
+            
                 MensajeTitulo("Listado Usuarios por equipo");
                 foreach (String item in aux)
                 {
                     Console.WriteLine(item);
                 }
 
-            }
+            
         }
         private static void ListarTodosLosEquipos()
         {
             List<Equipo> aux = _sistema.ListarEquipos();
 
-            if (aux.Count == 0) { throw new Exception("No hay equipos, crea uno"); }
+            if (aux.Count == 0) { MensajeError("No hay equipos, crea uno"); }
 
-            else {
-                MensajeTitulo("Listado Usuarios por equipo");
+           
+                MensajeTitulo("Listado de Equipos");
                 foreach (Equipo item in aux)
                 {
                     Console.WriteLine(item);
                 }
 
-            }
+            
 
         }
         private static void ListarPagoPorEmailDeUsuario()
@@ -183,11 +187,10 @@ namespace GestionPagos
 
             if (auxPagoUnico.Count == 0 && auxPagoRecurrente.Count == 0)
             {
-                throw new Exception("El usuario no tiene pagos");
-
+                MensajeError("El usuario no tiene pagos");
+                return;
             }
-            else
-            {
+            
                 MensajeTitulo("Listado de pagos unicos");
                 foreach (PagoUnico item in auxPagoUnico)
                 {
@@ -200,7 +203,7 @@ namespace GestionPagos
                     Console.WriteLine(item);
                 }
 
-            }
+            
 
         }
 

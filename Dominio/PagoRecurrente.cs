@@ -47,7 +47,8 @@ namespace Dominio
         }
         public override string MensajePago()
         {
-            return "PAGO RECURRENTE";
+            return $"Fecha de inicio: {FechaInicio.ToString("dd/MM/yyyy")}\n" +
+                    $"Fecha final: {FechaFinal.ToString("dd/MM/yyyy")}\n";
         }
     }
 }
