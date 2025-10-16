@@ -54,10 +54,10 @@ namespace Dominio
         }
         private void PreCargaEquipo() 
         {
-            AltaEquipo(new Equipo("Administración"));
+            AltaEquipo(new Equipo("Administracion"));
             AltaEquipo(new Equipo("Desarrollo"));
             AltaEquipo(new Equipo("Marketing"));
-            AltaEquipo(new Equipo("Soporte Técnico"));
+            AltaEquipo(new Equipo("Soporte Tecnico"));
         }
         private void PreCargaTipoPago()
         {
@@ -166,7 +166,7 @@ namespace Dominio
         {
             if (equipo == null)
             {
-                throw new Exception("El Equipo no puede ser nulo");
+                throw new Exception("El Equipo no existe");
             }
             equipo.Validar();
             if (_equipos.Contains(equipo)) { 
@@ -334,6 +334,9 @@ namespace Dominio
         {
             Usuario unU = ObtenerUsuario(email);
             List<PagoRecurrente> aux = new List<PagoRecurrente>();
+
+            if (unU == null) throw new Exception("El usuario con ese mail no existe");
+
 
             foreach (Pago item in _pagos)
             {
