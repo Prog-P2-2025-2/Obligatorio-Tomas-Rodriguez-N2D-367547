@@ -1,0 +1,9 @@
+﻿﻿@using Dominio
+<h1>Pagos de este mes</h1>
+
+
+    @foreach (Pago item in ViewBag.Pagos)
+    {
+        <p>@item.Descripcion  @item.Fecha()</p>
+    }
+</h3>

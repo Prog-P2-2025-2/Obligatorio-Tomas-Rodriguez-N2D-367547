@@ -17,6 +17,7 @@ namespace Dominio
         public DateTime FechaIncorporacion { get; set; }
         public Equipo UnEquipo { get; set; }
 
+
         public Usuario(string nombre, string apellido, string contrasenia, DateTime fechaIncorporacion, Equipo unEquipo) 
         {
             Id = _ultimoId++;
@@ -25,6 +26,7 @@ namespace Dominio
             Contrasenia = contrasenia;
             FechaIncorporacion = fechaIncorporacion;
             UnEquipo = unEquipo;
+
             Validar();
 
         }

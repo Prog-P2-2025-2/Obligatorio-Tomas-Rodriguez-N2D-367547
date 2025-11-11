@@ -40,7 +40,20 @@ namespace Dominio
                 throw new Exception("Numero de recibo no puede ser vacio");
             }        
         }
+        public override bool PagoVigenteEsteMes()
+        {
+            if (FechaPago.Month == DateTime.Now.Month && FechaPago.Year == DateTime.Now.Year)
+            {
+                return true;
+            }
 
+
+            return false;
+        }
+        public override DateTime Fecha()
+        {
+            return FechaPago;
+        }
         public override string MensajePago()
         {   
             return  $"Numero de recibo: {NroRecibo}\n" +

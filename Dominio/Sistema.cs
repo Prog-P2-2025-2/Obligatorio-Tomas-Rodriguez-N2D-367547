@@ -9,10 +9,20 @@ namespace Dominio
 {
     public class Sistema
     {
+        private static Sistema _instancia;
+        
+
         private List<Pago> _pagos = new List<Pago>();
         private List<Usuario> _usuarios = new List<Usuario>();
         private List<Equipo> _equipos = new List<Equipo>();
         private List<TipoGasto> _tiposGastos = new List<TipoGasto>();
+
+        public static Sistema Instancia()
+        {
+            if (_instancia == null) _instancia = new Sistema();
+            return _instancia;
+        }
+
         public Sistema() {
 
             PreCarga();
@@ -29,28 +39,30 @@ namespace Dominio
 
         private void PreCargaUsuario() 
         {
-            AltaUsuario(new Usuario("Juan", "Perez", "123456789", new DateTime(2025, 10, 20), ObtenerEquipo(0)));
-            AltaUsuario(new Usuario("Al", "Gomez", "234567890", new DateTime(2025, 10, 21), ObtenerEquipo(1)));
-            AltaUsuario(new Usuario("Luis", "Li", "345678901", new DateTime(2025, 10, 22), ObtenerEquipo(2)));
-            AltaUsuario(new Usuario("Zo", "Xu", "456789012", new DateTime(2025, 10, 23), ObtenerEquipo(3)));
-            AltaUsuario(new Usuario("Ana", "Yu", "567890123", new DateTime(2025, 10, 24), ObtenerEquipo(0)));
-            AltaUsuario(new Usuario("Ed", "Ng", "678901234", new DateTime(2025, 10, 25), ObtenerEquipo(1)));
-            AltaUsuario(new Usuario("Camila", "Rodriguez", "789012345", new DateTime(2025, 10, 26), ObtenerEquipo(2)));
-            AltaUsuario(new Usuario("Bo", "Ma", "890123456", new DateTime(2025, 10, 27), ObtenerEquipo(3)));
-            AltaUsuario(new Usuario("Eva", "Romero", "901234567", new DateTime(2025, 10, 28), ObtenerEquipo(0)));
-            AltaUsuario(new Usuario("Jo", "Al", "012345678", new DateTime(2025, 10, 29), ObtenerEquipo(1)));
-            AltaUsuario(new Usuario("Maximiliano", "Torres", "112345678", new DateTime(2025, 10, 30), ObtenerEquipo(2)));
-            AltaUsuario(new Usuario("Lu", "Fernandez", "122345678", new DateTime(2025, 10, 31), ObtenerEquipo(3)));
-            AltaUsuario(new Usuario("Leonardo", "Diaz", "132345678", new DateTime(2025, 11, 1), ObtenerEquipo(0)));
-            AltaUsuario(new Usuario("Micaela", "Lopez", "142345678", new DateTime(2025, 11, 2), ObtenerEquipo(1)));
-            AltaUsuario(new Usuario("Tomas", "Sanchez", "152345678", new DateTime(2025, 11, 3), ObtenerEquipo(2)));
-            AltaUsuario(new Usuario("Yul", "Kovacs", "162345678", new DateTime(2025, 11, 4), ObtenerEquipo(3)));
-            AltaUsuario(new Usuario("Ra", "Ju", "172345678", new DateTime(2025, 11, 5), ObtenerEquipo(0)));
-            AltaUsuario(new Usuario("Kai", "Morales", "182345678", new DateTime(2025, 11, 6), ObtenerEquipo(1)));
-            AltaUsuario(new Usuario("Noelia", "Luna", "192345678", new DateTime(2025, 11, 7), ObtenerEquipo(2)));
-            AltaUsuario(new Usuario("Teo", "Bonilla", "202345678", new DateTime(2025, 11, 8), ObtenerEquipo(3)));
-            AltaUsuario(new Usuario("Is", "Re", "212345678", new DateTime(2025, 11, 9), ObtenerEquipo(0)));
-            AltaUsuario(new Usuario("Fabrizio", "Zunino", "222345678", new DateTime(2025, 11, 10), ObtenerEquipo(1)));
+            AltaUsuario(new Gerente("Juan", "Perez", "123456789", new DateTime(2025, 10, 20), ObtenerEquipo(0)));
+            AltaUsuario(new Gerente("Al", "Gomez", "234567890", new DateTime(2025, 10, 21), ObtenerEquipo(1)));
+            AltaUsuario(new Gerente("Luis", "Li", "345678901", new DateTime(2025, 10, 22), ObtenerEquipo(2)));
+            AltaUsuario(new Gerente("Zo", "Xu", "456789012", new DateTime(2025, 10, 23), ObtenerEquipo(3)));
+            AltaUsuario(new Empleado("Ana", "Yu", "567890123", new DateTime(2025, 10, 24), ObtenerEquipo(0)));
+            AltaUsuario(new Empleado("Ed", "Ng", "678901234", new DateTime(2025, 10, 25), ObtenerEquipo(1)));
+            AltaUsuario(new Empleado("Camila", "Rodriguez", "789012345", new DateTime(2025, 10, 26), ObtenerEquipo(2)));
+            AltaUsuario(new Empleado("Bo", "Ma", "890123456", new DateTime(2025, 10, 27), ObtenerEquipo(3)));
+            AltaUsuario(new Empleado("Eva", "Romero", "901234567", new DateTime(2025, 10, 28), ObtenerEquipo(0)));
+            AltaUsuario(new Empleado("Jo", "Al", "012345678", new DateTime(2025, 10, 29), ObtenerEquipo(1)));
+            AltaUsuario(new Empleado("Maximiliano", "Torres", "112345678", new DateTime(2025, 10, 30), ObtenerEquipo(2)));
+            AltaUsuario(new Empleado("Lu", "Fernandez", "122345678", new DateTime(2025, 10, 31), ObtenerEquipo(3)));
+            AltaUsuario(new Empleado("Leonardo", "Diaz", "132345678", new DateTime(2025, 11, 1), ObtenerEquipo(0)));
+            AltaUsuario(new Empleado("Micaela", "Lopez", "142345678", new DateTime(2025, 11, 2), ObtenerEquipo(1)));
+            AltaUsuario(new Empleado("Tomas", "Sanchez", "152345678", new DateTime(2025, 11, 3), ObtenerEquipo(2)));
+            AltaUsuario(new Empleado("Yul", "Kovacs", "162345678", new DateTime(2025, 11, 4), ObtenerEquipo(3)));
+            AltaUsuario(new Empleado("Ra", "Ju", "172345678", new DateTime(2025, 11, 5), ObtenerEquipo(0)));
+            AltaUsuario(new Empleado("Kai", "Morales", "182345678", new DateTime(2025, 11, 6), ObtenerEquipo(1)));
+            AltaUsuario(new Empleado("Noelia", "Luna", "192345678", new DateTime(2025, 11, 7), ObtenerEquipo(2)));
+            AltaUsuario(new Empleado("Teo", "Bonilla", "202345678", new DateTime(2025, 11, 8), ObtenerEquipo(3)));
+            AltaUsuario(new Empleado("Is", "Re", "212345678", new DateTime(2025, 11, 9), ObtenerEquipo(0)));
+            AltaUsuario(new Empleado("Fabrizio", "Zunino", "222345678", new DateTime(2025, 11, 10), ObtenerEquipo(1)));
+
+
         }
         private void PreCargaEquipo() 
         {
@@ -143,7 +155,18 @@ namespace Dominio
             AltaPago(new PagoRecurrente(new DateTime(2025, 04, 15), new DateTime(2025, 12, 15), MetodoDePago.EFECTIVO, ObtenerTipoGasto(2), ObtenerUsuario(3), "Eventos mensuales de integración", 2600));
             AltaPago(new PagoRecurrente(new DateTime(2025, 05, 01), new DateTime(2025, 10, 01), MetodoDePago.DEBITO, ObtenerTipoGasto(3), ObtenerUsuario(4), "Alquiler mensual de proyectores", 3900));
 
+            /// estos datos son de prueba jeje
+            AltaPago(new PagoUnico(new DateTime(2025, 11, 03), "REC-0041", MetodoDePago.EFECTIVO, ObtenerTipoGasto(1), ObtenerUsuario(4), "Cena en restaurante", 1500));
+            AltaPago(new PagoUnico(new DateTime(2025, 11, 07), "REC-0042", MetodoDePago.CREDITO, ObtenerTipoGasto(2), ObtenerUsuario(4), "Compra de libros técnicos", 3200));
+            AltaPago(new PagoUnico(new DateTime(2025, 11, 12), "REC-0043", MetodoDePago.DEBITO, ObtenerTipoGasto(3), ObtenerUsuario(4), "Suscripción mensual gimnasio", 2500));
+            AltaPago(new PagoUnico(new DateTime(2025, 11, 15), "REC-0044", MetodoDePago.EFECTIVO, ObtenerTipoGasto(0), ObtenerUsuario(4), "Almuerzo universitario", 900));
+            AltaPago(new PagoUnico(new DateTime(2025, 11, 20), "REC-0045", MetodoDePago.CREDITO, ObtenerTipoGasto(5), ObtenerUsuario(4), "Entrada a evento de tecnología", 1800));
 
+            AltaPago(new PagoRecurrente(new DateTime(2025, 09, 01), new DateTime(2026, 02, 01), MetodoDePago.DEBITO, ObtenerTipoGasto(4), ObtenerUsuario(4), "Suscripción Netflix", 790));
+            AltaPago(new PagoRecurrente(new DateTime(2025, 06, 15), new DateTime(2025, 12, 15), MetodoDePago.CREDITO, ObtenerTipoGasto(3), ObtenerUsuario(4), "Curso online de programación", 2200));
+            AltaPago(new PagoRecurrente(new DateTime(2025, 10, 01), new DateTime(2026, 03, 01), MetodoDePago.DEBITO, ObtenerTipoGasto(2), ObtenerUsuario(4), "Suscripción a revista digital", 450));
+            AltaPago(new PagoRecurrente(new DateTime(2025, 11, 10), new DateTime(2026, 08, 10), MetodoDePago.EFECTIVO, ObtenerTipoGasto(1), ObtenerUsuario(4), "Pago mensual de hosting web", 1300));
+            AltaPago(new PagoRecurrente(new DateTime(2025, 11, 01), new DateTime(2026, 04, 01), MetodoDePago.CREDITO, ObtenerTipoGasto(5), ObtenerUsuario(4), "Membresía coworking", 3500));
         }
 
         public void AltaUsuario(Usuario usuario)
@@ -244,6 +267,20 @@ namespace Dominio
             }
             return null;
         }
+
+        public Usuario ObtenerUsuario(string email, string contrasenia)
+        {
+            foreach (Usuario item in _usuarios)
+            {
+                if (item.Email == email && item.Contrasenia == contrasenia)
+                {
+
+                    return item;
+                }
+
+            }
+                return null;
+        }
         public Usuario ObtenerUsuario(int id)
         {
             foreach (Usuario item in _usuarios)
@@ -295,7 +332,6 @@ namespace Dominio
        {
             Usuario unU = ObtenerUsuario(email);
             List<Pago> aux = new List<Pago>();
-
             foreach(Pago item in _pagos)
             {
                 if(unU.Email == item.Usuario.Email)
@@ -303,10 +339,56 @@ namespace Dominio
                     aux.Add(item);
                 }
             }
-
+            return aux;
+        }
+        public List<Pago> ListarPagosPorIdDeUsuario(int id)
+        {
+            Usuario unU = ObtenerUsuario(id);
+            List<Pago> aux = new List<Pago>();
+            foreach (Pago item in _pagos)
+            {
+                if (unU.Id == item.Usuario.Id && item.PagoVigenteEsteMes())
+                {
+                    aux.Add(item);
+                }
+            }
             return aux;
         }
 
+        public List<PagoUnico> ListarPagosUnicosPorIdDeUsuario(int id)
+        {
+            Usuario unU = ObtenerUsuario(id);
+            List<PagoUnico> aux = new List<PagoUnico>();
+
+            foreach (Pago item in _pagos)
+            {
+                if (item is PagoUnico)
+                {
+                    if (unU.Id == item.Usuario.Id && item.PagoVigenteEsteMes())
+                    {
+                        aux.Add((PagoUnico)item);
+                    }
+                }
+            } 
+            return aux;
+        }
+        public List<PagoRecurrente> ListarPagosRecurrentePorIdDeUsuario(int id)
+        {
+            Usuario unU = ObtenerUsuario(id);
+            List<PagoRecurrente> aux = new List<PagoRecurrente>();
+
+            foreach (Pago item in _pagos)
+            {
+                if (item is PagoRecurrente)
+                {
+                    if (unU.Id == item.Usuario.Id && item.PagoVigenteEsteMes())
+                    {
+                        aux.Add((PagoRecurrente)item);
+                    }
+                }
+            }
+            return aux;
+        }
 
         public List<PagoUnico> ListarPagosUnicoPorMail(string email)
         {
@@ -352,5 +434,7 @@ namespace Dominio
 
             return aux;
         }
+
+
     }
 }

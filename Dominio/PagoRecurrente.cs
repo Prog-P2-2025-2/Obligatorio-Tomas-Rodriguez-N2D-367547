@@ -45,10 +45,29 @@ namespace Dominio
             }
 
         }
+        public override bool PagoVigenteEsteMes() { 
+            if (FechaInicio.Month >= DateTime.Now.Month && FechaFinal.Month <= DateTime.Now.Month && FechaFinal.Year >= DateTime.Now.Year) {
+                return true;
+            }
+            
+        
+            return false;
+        }
+        public override DateTime Fecha()
+        {
+            return FechaFinal;
+        }
+
         public override string MensajePago()
         {
             return $"Fecha de inicio: {FechaInicio.ToString("dd/MM/yyyy")}\n" +
                     $"Fecha final: {FechaFinal.ToString("dd/MM/yyyy")}\n";
         }
+//        public override DateTime FechaPagoActual() {  
+  //          
+    //        if (FechaFinal >= DateTime.Now )
+      //      return FechaFinal; 
+        
+        //}
     }
 }

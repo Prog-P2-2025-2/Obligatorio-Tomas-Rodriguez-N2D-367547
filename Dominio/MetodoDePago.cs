@@ -12,4 +12,6 @@ namespace Dominio
         DEBITO,
         EFECTIVO
     }
+
+
 }

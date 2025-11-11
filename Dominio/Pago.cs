@@ -65,6 +65,8 @@ namespace Dominio
             }
         }
         public abstract string MensajePago();
+        public abstract bool PagoVigenteEsteMes();
+        public abstract DateTime Fecha();
 
         public override string ToString()
         {
