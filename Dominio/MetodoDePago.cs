@@ -8,6 +8,7 @@ namespace Dominio
 {
    public enum MetodoDePago
     {
+
         CREDITO,
         DEBITO,
         EFECTIVO

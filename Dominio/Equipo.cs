@@ -10,7 +10,7 @@ namespace Dominio
     public class Equipo
     {
         public int Id { get; set; }
-        private static int _ultimoId = 0;
+        private static int _ultimoId = 1;
         public string Nombre { get; set; }
         public Equipo(string nombre)
         {

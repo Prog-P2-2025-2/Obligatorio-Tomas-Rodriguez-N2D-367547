@@ -13,6 +13,8 @@ namespace Dominio
         public DateTime FechaPago{ get; set; }
         public string NroRecibo { get; set; }
 
+        public PagoUnico() { }
+
         public PagoUnico(DateTime fechaPago, string nroRecibo, MetodoDePago metodoDePago, TipoGasto tipoGasto, Usuario usuario, string descripcion, int monto)
             : base(metodoDePago, tipoGasto, usuario, descripcion, monto)
         {
@@ -50,7 +52,8 @@ namespace Dominio
 
             return false;
         }
-        public override DateTime Fecha()
+
+        public override DateTime FechaEsteMes()
         {
             return FechaPago;
         }
@@ -59,5 +62,21 @@ namespace Dominio
             return  $"Numero de recibo: {NroRecibo}\n" +
                     $"Fecha de Pago: {FechaPago.ToString("dd/MM/yyyy")}\n";                                       
         }
+        public override int CalcularMesesDeFechas() 
+        {
+            return 0;
+        
+        }
+        public override decimal DescuentoYRecargo()
+        {
+            decimal montoCalculado = Monto;
+            if (MetodoDePago == MetodoDePago.EFECTIVO)
+            {
+                return Monto - ((decimal)Monto * (decimal)0.15);
+            }
+
+            return Monto - ((decimal)Monto * (decimal)0.10);
+        }
+
     }
 }

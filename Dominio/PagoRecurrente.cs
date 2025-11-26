@@ -12,7 +12,7 @@ namespace Dominio
         public DateTime FechaInicio { get; set; }
         public DateTime FechaFinal { get; set; }
 
-
+        public PagoRecurrente(){}
         public PagoRecurrente(DateTime fechaInicio,DateTime fechaFinal,MetodoDePago metodoDePago, TipoGasto tipoGasto, Usuario usuario, string descripcion, int monto) : base(metodoDePago, tipoGasto, usuario, descripcion, monto)
         {
             FechaInicio = fechaInicio;
@@ -34,10 +34,6 @@ namespace Dominio
         }
         private void ValidarFechaFinal()
         {
-            if (FechaFinal == default)
-            {
-                throw new Exception("La fecha final no puede estar vacía.");
-            }
 
             if (FechaFinal < FechaInicio)
             {
@@ -46,28 +42,59 @@ namespace Dominio
 
         }
         public override bool PagoVigenteEsteMes() { 
-            if (FechaInicio.Month >= DateTime.Now.Month && FechaFinal.Month <= DateTime.Now.Month && FechaFinal.Year >= DateTime.Now.Year) {
+            if (FechaFinal.Year > DateTime.Now.Year) {
+                return true;
+            }
+            if (FechaFinal.Year == DateTime.Now.Year &&  FechaFinal.Month >= DateTime.Now.Month) 
+            {
                 return true;
             }
             
         
             return false;
         }
-        public override DateTime Fecha()
+
+        public override DateTime FechaEsteMes()
         {
-            return FechaFinal;
+
+            return new DateTime(DateTime.Now.Year, DateTime.Now.Month, FechaFinal.Day);
+        }
+        public override int CalcularMesesDeFechas()
+        {
+            int meses = (FechaFinal.Year - FechaInicio.Year) * 12 +
+            (FechaFinal.Month - FechaInicio.Month);
+
+            if (FechaFinal.Day < FechaInicio.Day)
+            {
+                meses--;
+            }
+
+            return meses;
+        }
+        public override decimal DescuentoYRecargo() 
+        {
+
+           
+            if (CalcularMesesDeFechas() >= 10 )
+            {
+                return (decimal)Monto * (decimal)1.1;
+            }
+            if(CalcularMesesDeFechas() >6 && CalcularMesesDeFechas() <= 9)
+            {
+                return (decimal)Monto * (decimal)1.05;
+            }
+            if (CalcularMesesDeFechas() < 5)
+            {
+                return (decimal)Monto * (decimal)1.03;
+            }
+            return (decimal)Monto * (decimal)1.03;
+        }
+        public override string MensajePago()
+        {           
+            return $"Fecha de inicio: {Descripcion}" +
+                $"Fecha de inicio: {FechaInicio.ToString("dd/MM/yyyy")}" +
+                    $"Fecha final: {FechaFinal.ToString("dd/MM/yyyy")}";
         }
 
-        public override string MensajePago()
-        {
-            return $"Fecha de inicio: {FechaInicio.ToString("dd/MM/yyyy")}\n" +
-                    $"Fecha final: {FechaFinal.ToString("dd/MM/yyyy")}\n";
-        }
-//        public override DateTime FechaPagoActual() {  
-  //          
-    //        if (FechaFinal >= DateTime.Now )
-      //      return FechaFinal; 
-        
-        //}
     }
 }

@@ -39,28 +39,28 @@ namespace Dominio
 
         private void PreCargaUsuario() 
         {
-            AltaUsuario(new Gerente("Juan", "Perez", "123456789", new DateTime(2025, 10, 20), ObtenerEquipo(0)));
-            AltaUsuario(new Gerente("Al", "Gomez", "234567890", new DateTime(2025, 10, 21), ObtenerEquipo(1)));
-            AltaUsuario(new Gerente("Luis", "Li", "345678901", new DateTime(2025, 10, 22), ObtenerEquipo(2)));
-            AltaUsuario(new Gerente("Zo", "Xu", "456789012", new DateTime(2025, 10, 23), ObtenerEquipo(3)));
-            AltaUsuario(new Empleado("Ana", "Yu", "567890123", new DateTime(2025, 10, 24), ObtenerEquipo(0)));
-            AltaUsuario(new Empleado("Ed", "Ng", "678901234", new DateTime(2025, 10, 25), ObtenerEquipo(1)));
-            AltaUsuario(new Empleado("Camila", "Rodriguez", "789012345", new DateTime(2025, 10, 26), ObtenerEquipo(2)));
-            AltaUsuario(new Empleado("Bo", "Ma", "890123456", new DateTime(2025, 10, 27), ObtenerEquipo(3)));
-            AltaUsuario(new Empleado("Eva", "Romero", "901234567", new DateTime(2025, 10, 28), ObtenerEquipo(0)));
-            AltaUsuario(new Empleado("Jo", "Al", "012345678", new DateTime(2025, 10, 29), ObtenerEquipo(1)));
-            AltaUsuario(new Empleado("Maximiliano", "Torres", "112345678", new DateTime(2025, 10, 30), ObtenerEquipo(2)));
-            AltaUsuario(new Empleado("Lu", "Fernandez", "122345678", new DateTime(2025, 10, 31), ObtenerEquipo(3)));
-            AltaUsuario(new Empleado("Leonardo", "Diaz", "132345678", new DateTime(2025, 11, 1), ObtenerEquipo(0)));
-            AltaUsuario(new Empleado("Micaela", "Lopez", "142345678", new DateTime(2025, 11, 2), ObtenerEquipo(1)));
-            AltaUsuario(new Empleado("Tomas", "Sanchez", "152345678", new DateTime(2025, 11, 3), ObtenerEquipo(2)));
-            AltaUsuario(new Empleado("Yul", "Kovacs", "162345678", new DateTime(2025, 11, 4), ObtenerEquipo(3)));
-            AltaUsuario(new Empleado("Ra", "Ju", "172345678", new DateTime(2025, 11, 5), ObtenerEquipo(0)));
-            AltaUsuario(new Empleado("Kai", "Morales", "182345678", new DateTime(2025, 11, 6), ObtenerEquipo(1)));
-            AltaUsuario(new Empleado("Noelia", "Luna", "192345678", new DateTime(2025, 11, 7), ObtenerEquipo(2)));
-            AltaUsuario(new Empleado("Teo", "Bonilla", "202345678", new DateTime(2025, 11, 8), ObtenerEquipo(3)));
-            AltaUsuario(new Empleado("Is", "Re", "212345678", new DateTime(2025, 11, 9), ObtenerEquipo(0)));
-            AltaUsuario(new Empleado("Fabrizio", "Zunino", "222345678", new DateTime(2025, 11, 10), ObtenerEquipo(1)));
+            AltaUsuario(new Gerente("Juan", "Perez", "123456789", new DateTime(2025, 10, 20), ObtenerEquipo(1)));
+            AltaUsuario(new Gerente("Al", "Gomez", "234567890", new DateTime(2025, 10, 21), ObtenerEquipo(2)));
+            AltaUsuario(new Gerente("Luis", "Li", "345678901", new DateTime(2025, 10, 22), ObtenerEquipo(3)));
+            AltaUsuario(new Gerente("Zo", "Xu", "456789012", new DateTime(2025, 10, 23), ObtenerEquipo(4)));
+            AltaUsuario(new Empleado("Ana", "Yu", "567890123", new DateTime(2025, 10, 24), ObtenerEquipo(1)));
+            AltaUsuario(new Empleado("Ed", "Ng", "678901234", new DateTime(2025, 10, 25), ObtenerEquipo(2)));
+            AltaUsuario(new Empleado("Camila", "Rodriguez", "789012345", new DateTime(2025, 10, 26), ObtenerEquipo(3)));
+            AltaUsuario(new Empleado("Bo", "Ma", "890123456", new DateTime(2025, 10, 27), ObtenerEquipo(4)));
+            AltaUsuario(new Empleado("Eva", "Romero", "901234567", new DateTime(2025, 10, 28), ObtenerEquipo(1)));
+            AltaUsuario(new Empleado("Jo", "Al", "012345678", new DateTime(2025, 10, 29), ObtenerEquipo(2)));
+            AltaUsuario(new Empleado("Maximiliano", "Torres", "112345678", new DateTime(2025, 10, 30), ObtenerEquipo(3)));
+            AltaUsuario(new Empleado("Lu", "Fernandez", "122345678", new DateTime(2025, 10, 31), ObtenerEquipo(4)));
+            AltaUsuario(new Empleado("Leonardo", "Diaz", "132345678", new DateTime(2025, 11, 1), ObtenerEquipo(1)));
+            AltaUsuario(new Empleado("Micaela", "Lopez", "142345678", new DateTime(2025, 11, 2), ObtenerEquipo(2)));
+            AltaUsuario(new Empleado("Tomas", "Sanchez", "152345678", new DateTime(2025, 11, 3), ObtenerEquipo(3)));
+            AltaUsuario(new Empleado("Yul", "Kovacs", "162345678", new DateTime(2025, 11, 4), ObtenerEquipo(4)));
+            AltaUsuario(new Empleado("Ra", "Ju", "172345678", new DateTime(2025, 11, 5), ObtenerEquipo(1)));
+            AltaUsuario(new Empleado("Kai", "Morales", "182345678", new DateTime(2025, 11, 6), ObtenerEquipo(2)));
+            AltaUsuario(new Empleado("Noelia", "Luna", "192345678", new DateTime(2025, 11, 7), ObtenerEquipo(3)));
+            AltaUsuario(new Empleado("Teo", "Bonilla", "202345678", new DateTime(2025, 11, 8), ObtenerEquipo(4)));
+            AltaUsuario(new Empleado("Is", "Re", "212345678", new DateTime(2025, 11, 9), ObtenerEquipo(1)));
+            AltaUsuario(new Empleado("Fabrizio", "Zunino", "222345678", new DateTime(2025, 11, 10), ObtenerEquipo(2)));
 
 
         }
@@ -87,86 +87,89 @@ namespace Dominio
         }
         private void PreCargaPagos() 
         {
-            AltaPago(new PagoUnico(new DateTime(2025, 01, 12), "REC-0001", MetodoDePago.EFECTIVO, ObtenerTipoGasto(0), ObtenerUsuario(0), "Almuerzo ejecutivo", 1200));
-            AltaPago(new PagoUnico(new DateTime(2025, 02, 05), "REC-0002", MetodoDePago.DEBITO, ObtenerTipoGasto(1), ObtenerUsuario(1), "Taxi a reunión", 800));
-            AltaPago(new PagoUnico(new DateTime(2025, 03, 18), "REC-0003", MetodoDePago.CREDITO, ObtenerTipoGasto(2), ObtenerUsuario(2), "After team", 1500));
-            AltaPago(new PagoUnico(new DateTime(2025, 04, 10), "REC-0004", MetodoDePago.EFECTIVO, ObtenerTipoGasto(3), ObtenerUsuario(3), "Mouse ergonómico", 3200));
-            AltaPago(new PagoUnico(new DateTime(2025, 05, 22), "REC-0005", MetodoDePago.DEBITO, ObtenerTipoGasto(4), ObtenerUsuario(4), "Suscripción Canva", 4500));
-            AltaPago(new PagoUnico(new DateTime(2025, 06, 03), "REC-0006", MetodoDePago.CREDITO, ObtenerTipoGasto(5), ObtenerUsuario(5), "Curso de liderazgo", 18000));
-            AltaPago(new PagoUnico(new DateTime(2025, 07, 14), "REC-0007", MetodoDePago.EFECTIVO, ObtenerTipoGasto(6), ObtenerUsuario(6), "Regalo aniversario", 2500));
-            AltaPago(new PagoUnico(new DateTime(2025, 08, 26), "REC-0008", MetodoDePago.DEBITO, ObtenerTipoGasto(7), ObtenerUsuario(7), "Publicidad en redes", 10000));
-            AltaPago(new PagoUnico(new DateTime(2025, 09, 07), "REC-0009", MetodoDePago.CREDITO, ObtenerTipoGasto(8), ObtenerUsuario(8), "Reparación notebook", 6200));
-            AltaPago(new PagoUnico(new DateTime(2025, 10, 19), "REC-0010", MetodoDePago.EFECTIVO, ObtenerTipoGasto(9), ObtenerUsuario(9), "Viáticos viaje interior", 7800));
-            AltaPago(new PagoUnico(new DateTime(2025, 11, 01), "REC-0011", MetodoDePago.DEBITO, ObtenerTipoGasto(0), ObtenerUsuario(10), "Cena de equipo", 5400));
-            AltaPago(new PagoUnico(new DateTime(2025, 12, 13), "REC-0012", MetodoDePago.CREDITO, ObtenerTipoGasto(1), ObtenerUsuario(11), "Combustible", 3200));
-            AltaPago(new PagoUnico(new DateTime(2025, 01, 25), "REC-0013", MetodoDePago.EFECTIVO, ObtenerTipoGasto(2), ObtenerUsuario(12), "Entrada evento social", 2100));
-            AltaPago(new PagoUnico(new DateTime(2025, 02, 16), "REC-0014", MetodoDePago.DEBITO, ObtenerTipoGasto(3), ObtenerUsuario(13), "Silla gamer", 8900));
-            AltaPago(new PagoUnico(new DateTime(2025, 03, 28), "REC-0015", MetodoDePago.CREDITO, ObtenerTipoGasto(4), ObtenerUsuario(14), "Suscripción Figma", 3600));
-            AltaPago(new PagoUnico(new DateTime(2025, 04, 09), "REC-0016", MetodoDePago.EFECTIVO, ObtenerTipoGasto(5), ObtenerUsuario(15), "Taller de comunicación", 12000));
-            AltaPago(new PagoUnico(new DateTime(2025, 05, 21), "REC-0017", MetodoDePago.DEBITO, ObtenerTipoGasto(6), ObtenerUsuario(16), "Obsequio cliente", 4100));
-            AltaPago(new PagoUnico(new DateTime(2025, 06, 02), "REC-0018", MetodoDePago.CREDITO, ObtenerTipoGasto(7), ObtenerUsuario(17), "Diseño de banner", 7200));
-            AltaPago(new PagoUnico(new DateTime(2025, 07, 13), "REC-0019", MetodoDePago.EFECTIVO, ObtenerTipoGasto(8), ObtenerUsuario(18), "Mantenimiento impresora", 3100));
-            AltaPago(new PagoUnico(new DateTime(2025, 08, 24), "REC-0020", MetodoDePago.DEBITO, ObtenerTipoGasto(9), ObtenerUsuario(19), "Alojamiento por viaje", 34200));
-            AltaPago(new PagoUnico(new DateTime(2025, 09, 05), "REC-0021", MetodoDePago.CREDITO, ObtenerTipoGasto(0), ObtenerUsuario(20), "Desayuno reunión", 1250));
-            AltaPago(new PagoUnico(new DateTime(2025, 10, 17), "REC-0022", MetodoDePago.EFECTIVO, ObtenerTipoGasto(1), ObtenerUsuario(21), "Estacionamiento", 600));
-            AltaPago(new PagoUnico(new DateTime(2025, 11, 29), "REC-0023", MetodoDePago.DEBITO, ObtenerTipoGasto(2), ObtenerUsuario(0), "Concierto integración", 22000));
-            AltaPago(new PagoUnico(new DateTime(2025, 12, 10), "REC-0024", MetodoDePago.CREDITO, ObtenerTipoGasto(3), ObtenerUsuario(1), "Disco SSD", 12900));
-            AltaPago(new PagoUnico(new DateTime(2025, 01, 03), "REC-0025", MetodoDePago.EFECTIVO, ObtenerTipoGasto(4), ObtenerUsuario(2), "Herramienta SaaS", 58000));
-            AltaPago(new PagoUnico(new DateTime(2025, 02, 14), "REC-0026", MetodoDePago.DEBITO, ObtenerTipoGasto(5), ObtenerUsuario(3), "Certificación nube", 45000));
-            AltaPago(new PagoUnico(new DateTime(2025, 03, 26), "REC-0027", MetodoDePago.CREDITO, ObtenerTipoGasto(6), ObtenerUsuario(4), "Regalo cliente", 4100));
-            AltaPago(new PagoUnico(new DateTime(2025, 04, 07), "REC-0028", MetodoDePago.EFECTIVO, ObtenerTipoGasto(7), ObtenerUsuario(5), "Google Ads", 16000));
-            AltaPago(new PagoUnico(new DateTime(2025, 05, 19), "REC-0029", MetodoDePago.DEBITO, ObtenerTipoGasto(8), ObtenerUsuario(6), "Servicio técnico", 7200));
-            AltaPago(new PagoUnico(new DateTime(2025, 06, 30), "REC-0030", MetodoDePago.CREDITO, ObtenerTipoGasto(9), ObtenerUsuario(7), "Viaje internacional", 89000));
-            AltaPago(new PagoUnico(new DateTime(2025, 07, 11), "REC-0031", MetodoDePago.EFECTIVO, ObtenerTipoGasto(0), ObtenerUsuario(8), "Catering reunión", 9800));
-            AltaPago(new PagoUnico(new DateTime(2025, 08, 22), "REC-0032", MetodoDePago.DEBITO, ObtenerTipoGasto(1), ObtenerUsuario(9), "Boletería interurbana", 2100));
-            AltaPago(new PagoUnico(new DateTime(2025, 09, 03), "REC-0033", MetodoDePago.CREDITO, ObtenerTipoGasto(2), ObtenerUsuario(10), "Evento social", 13500));
-            AltaPago(new PagoUnico(new DateTime(2025, 10, 14), "REC-0034", MetodoDePago.EFECTIVO, ObtenerTipoGasto(3), ObtenerUsuario(11), "Soporte hardware", 4700));
-            AltaPago(new PagoUnico(new DateTime(2025, 11, 25), "REC-0035", MetodoDePago.DEBITO, ObtenerTipoGasto(4), ObtenerUsuario(12), "Analítica web", 7200));
-            AltaPago(new PagoUnico(new DateTime(2025, 12, 06), "REC-0036", MetodoDePago.CREDITO, ObtenerTipoGasto(5), ObtenerUsuario(13), "Taller liderazgo", 19800));
-            AltaPago(new PagoUnico(new DateTime(2025, 01, 17), "REC-0037", MetodoDePago.EFECTIVO, ObtenerTipoGasto(6), ObtenerUsuario(14), "Canasta regalo", 5400));
-            AltaPago(new PagoUnico(new DateTime(2025, 02, 08), "REC-0038", MetodoDePago.DEBITO, ObtenerTipoGasto(7), ObtenerUsuario(15), "Video promocional", 42000));
-            AltaPago(new PagoUnico(new DateTime(2025, 04, 18), "REC-0040", MetodoDePago.EFECTIVO, ObtenerTipoGasto(9), ObtenerUsuario(20), "Viáticos para conferencia", 8700));
-            AltaPago(new PagoUnico(new DateTime(2025, 05, 30), "REC-0041", MetodoDePago.DEBITO, ObtenerTipoGasto(0), ObtenerUsuario(21), "Almuerzo de cierre de proyecto", 3100));
-            AltaPago(new PagoUnico(new DateTime(2025, 06, 11), "REC-0042", MetodoDePago.CREDITO, ObtenerTipoGasto(1), ObtenerUsuario(5), "Transporte a evento externo", 1900));
+            AltaPago(new PagoUnico(new DateTime(2025, 01, 12), "REC-0001", MetodoDePago.EFECTIVO, ObtenerTipoGasto(1), ObtenerUsuario(1), "Almuerzo ejecutivo", 1200));
+            AltaPago(new PagoUnico(new DateTime(2025, 02, 05), "REC-0002", MetodoDePago.DEBITO, ObtenerTipoGasto(2), ObtenerUsuario(2), "Taxi a reunión", 800));
+            AltaPago(new PagoUnico(new DateTime(2025, 03, 18), "REC-0003", MetodoDePago.CREDITO, ObtenerTipoGasto(3), ObtenerUsuario(3), "After team", 1500));
+            AltaPago(new PagoUnico(new DateTime(2025, 04, 10), "REC-0004", MetodoDePago.EFECTIVO, ObtenerTipoGasto(4), ObtenerUsuario(4), "Mouse ergonómico", 3200));
+            AltaPago(new PagoUnico(new DateTime(2025, 05, 22), "REC-0005", MetodoDePago.DEBITO, ObtenerTipoGasto(5), ObtenerUsuario(5), "Suscripción Canva", 4500));
+            AltaPago(new PagoUnico(new DateTime(2025, 06, 03), "REC-0006", MetodoDePago.CREDITO, ObtenerTipoGasto(6), ObtenerUsuario(6), "Curso de liderazgo", 18000));
+            AltaPago(new PagoUnico(new DateTime(2025, 07, 14), "REC-0007", MetodoDePago.EFECTIVO, ObtenerTipoGasto(7), ObtenerUsuario(7), "Regalo aniversario", 2500));
+            AltaPago(new PagoUnico(new DateTime(2025, 08, 26), "REC-0008", MetodoDePago.DEBITO, ObtenerTipoGasto(8), ObtenerUsuario(8), "Publicidad en redes", 10000));
+            AltaPago(new PagoUnico(new DateTime(2025, 09, 07), "REC-0009", MetodoDePago.CREDITO, ObtenerTipoGasto(9), ObtenerUsuario(9), "Reparación notebook", 6200));
+            AltaPago(new PagoUnico(new DateTime(2025, 10, 19), "REC-0010", MetodoDePago.EFECTIVO, ObtenerTipoGasto(10), ObtenerUsuario(10), "Viáticos viaje interior", 7800));
+            AltaPago(new PagoUnico(new DateTime(2025, 11, 01), "REC-0011", MetodoDePago.DEBITO, ObtenerTipoGasto(1), ObtenerUsuario(11), "Cena de equipo", 5400));
+            AltaPago(new PagoUnico(new DateTime(2025, 12, 13), "REC-0012", MetodoDePago.CREDITO, ObtenerTipoGasto(2), ObtenerUsuario(12), "Combustible", 3200));
+            AltaPago(new PagoUnico(new DateTime(2025, 01, 25), "REC-0013", MetodoDePago.EFECTIVO, ObtenerTipoGasto(3), ObtenerUsuario(13), "Entrada evento social", 2100));
+            AltaPago(new PagoUnico(new DateTime(2025, 02, 16), "REC-0014", MetodoDePago.DEBITO, ObtenerTipoGasto(4), ObtenerUsuario(14), "Silla gamer", 8900));
+            AltaPago(new PagoUnico(new DateTime(2025, 03, 28), "REC-0015", MetodoDePago.CREDITO, ObtenerTipoGasto(5), ObtenerUsuario(15), "Suscripción Figma", 3600));
+            AltaPago(new PagoUnico(new DateTime(2025, 04, 09), "REC-0016", MetodoDePago.EFECTIVO, ObtenerTipoGasto(6), ObtenerUsuario(16), "Taller de comunicación", 12000));
+            AltaPago(new PagoUnico(new DateTime(2025, 05, 21), "REC-0017", MetodoDePago.DEBITO, ObtenerTipoGasto(7), ObtenerUsuario(17), "Obsequio cliente", 4100));
+            AltaPago(new PagoUnico(new DateTime(2025, 06, 02), "REC-0018", MetodoDePago.CREDITO, ObtenerTipoGasto(8), ObtenerUsuario(18), "Diseño de banner", 7200));
+            AltaPago(new PagoUnico(new DateTime(2025, 07, 13), "REC-0019", MetodoDePago.EFECTIVO, ObtenerTipoGasto(9), ObtenerUsuario(19), "Mantenimiento impresora", 3100));
+            AltaPago(new PagoUnico(new DateTime(2025, 08, 24), "REC-0020", MetodoDePago.DEBITO, ObtenerTipoGasto(10), ObtenerUsuario(20), "Alojamiento por viaje", 34200));
+            AltaPago(new PagoUnico(new DateTime(2025, 09, 05), "REC-0021", MetodoDePago.CREDITO, ObtenerTipoGasto(1), ObtenerUsuario(21), "Desayuno reunión", 1250));
+            AltaPago(new PagoUnico(new DateTime(2025, 10, 17), "REC-0022", MetodoDePago.EFECTIVO, ObtenerTipoGasto(2), ObtenerUsuario(22), "Estacionamiento", 600));
+            AltaPago(new PagoUnico(new DateTime(2025, 11, 29), "REC-0023", MetodoDePago.DEBITO, ObtenerTipoGasto(3), ObtenerUsuario(1), "Concierto integración", 22000));
+            AltaPago(new PagoUnico(new DateTime(2025, 12, 10), "REC-0024", MetodoDePago.CREDITO, ObtenerTipoGasto(4), ObtenerUsuario(2), "Disco SSD", 12900));
+            AltaPago(new PagoUnico(new DateTime(2025, 01, 03), "REC-0025", MetodoDePago.EFECTIVO, ObtenerTipoGasto(5), ObtenerUsuario(3), "Herramienta SaaS", 58000));
+            AltaPago(new PagoUnico(new DateTime(2025, 02, 14), "REC-0026", MetodoDePago.DEBITO, ObtenerTipoGasto(6), ObtenerUsuario(4), "Certificación nube", 45000));
+            AltaPago(new PagoUnico(new DateTime(2025, 03, 26), "REC-0027", MetodoDePago.CREDITO, ObtenerTipoGasto(7), ObtenerUsuario(5), "Regalo cliente", 4100));
+            AltaPago(new PagoUnico(new DateTime(2025, 04, 07), "REC-0028", MetodoDePago.EFECTIVO, ObtenerTipoGasto(8), ObtenerUsuario(6), "Google Ads", 16000));
+            AltaPago(new PagoUnico(new DateTime(2025, 05, 19), "REC-0029", MetodoDePago.DEBITO, ObtenerTipoGasto(9), ObtenerUsuario(7), "Servicio técnico", 7200));
+            AltaPago(new PagoUnico(new DateTime(2025, 06, 30), "REC-0030", MetodoDePago.CREDITO, ObtenerTipoGasto(10), ObtenerUsuario(8), "Viaje internacional", 89000));
+            AltaPago(new PagoUnico(new DateTime(2025, 07, 11), "REC-0031", MetodoDePago.EFECTIVO, ObtenerTipoGasto(1), ObtenerUsuario(9), "Catering reunión", 9800));
+            AltaPago(new PagoUnico(new DateTime(2025, 08, 22), "REC-0032", MetodoDePago.DEBITO, ObtenerTipoGasto(2), ObtenerUsuario(10), "Boletería interurbana", 2100));
+            AltaPago(new PagoUnico(new DateTime(2025, 09, 03), "REC-0033", MetodoDePago.CREDITO, ObtenerTipoGasto(3), ObtenerUsuario(11), "Evento social", 13500));
+            AltaPago(new PagoUnico(new DateTime(2025, 10, 14), "REC-0034", MetodoDePago.EFECTIVO, ObtenerTipoGasto(4), ObtenerUsuario(12), "Soporte hardware", 4700));
+            AltaPago(new PagoUnico(new DateTime(2025, 11, 25), "REC-0035", MetodoDePago.DEBITO, ObtenerTipoGasto(5), ObtenerUsuario(13), "Analítica web", 7200));
+            AltaPago(new PagoUnico(new DateTime(2025, 12, 06), "REC-0036", MetodoDePago.CREDITO, ObtenerTipoGasto(6), ObtenerUsuario(14), "Taller liderazgo", 19800));
+            AltaPago(new PagoUnico(new DateTime(2025, 01, 17), "REC-0037", MetodoDePago.EFECTIVO, ObtenerTipoGasto(7), ObtenerUsuario(15), "Canasta regalo", 5400));
+            AltaPago(new PagoUnico(new DateTime(2025, 02, 08), "REC-0038", MetodoDePago.DEBITO, ObtenerTipoGasto(8), ObtenerUsuario(16), "Video promocional", 42000));
+            AltaPago(new PagoUnico(new DateTime(2025, 04, 18), "REC-0040", MetodoDePago.EFECTIVO, ObtenerTipoGasto(10), ObtenerUsuario(21), "Viáticos para conferencia", 8700));
+            AltaPago(new PagoUnico(new DateTime(2025, 05, 30), "REC-0041", MetodoDePago.DEBITO, ObtenerTipoGasto(1), ObtenerUsuario(22), "Almuerzo de cierre de proyecto", 3100));
+            AltaPago(new PagoUnico(new DateTime(2025, 06, 11), "REC-0042", MetodoDePago.CREDITO, ObtenerTipoGasto(2), ObtenerUsuario(6), "Transporte a evento externo", 1900));
 
-            AltaPago(new PagoRecurrente(new DateTime(2025, 01, 10), new DateTime(2025, 06, 10), MetodoDePago.DEBITO, ObtenerTipoGasto(4), ObtenerUsuario(0), "Suscripción Adobe Creative Cloud", 1800));
-            AltaPago(new PagoRecurrente(new DateTime(2025, 02, 01), new DateTime(2025, 12, 01), MetodoDePago.CREDITO, ObtenerTipoGasto(5), ObtenerUsuario(1), "Curso mensual de inglés técnico", 2500));
-            AltaPago(new PagoRecurrente(new DateTime(2025, 03, 15), new DateTime(2025, 09, 15), MetodoDePago.EFECTIVO, ObtenerTipoGasto(9), ObtenerUsuario(2), "Viáticos mensuales por proyecto", 3200));
-            AltaPago(new PagoRecurrente(new DateTime(2025, 04, 05), new DateTime(2025, 07, 05), MetodoDePago.DEBITO, ObtenerTipoGasto(0), ObtenerUsuario(3), "Almuerzo mensual con cliente", 1500));
-            AltaPago(new PagoRecurrente(new DateTime(2025, 05, 20), new DateTime(2025, 11, 20), MetodoDePago.CREDITO, ObtenerTipoGasto(1), ObtenerUsuario(4), "Transporte mensual oficina", 900));
-            AltaPago(new PagoRecurrente(new DateTime(2025, 06, 01), new DateTime(2025, 12, 01), MetodoDePago.EFECTIVO, ObtenerTipoGasto(2), ObtenerUsuario(5), "After mensual de integración", 2000));
-            AltaPago(new PagoRecurrente(new DateTime(2025, 07, 10), new DateTime(2025, 10, 10), MetodoDePago.DEBITO, ObtenerTipoGasto(3), ObtenerUsuario(6), "Alquiler de equipamiento", 3500));
-            AltaPago(new PagoRecurrente(new DateTime(2025, 08, 15), new DateTime(2025, 12, 15), MetodoDePago.CREDITO, ObtenerTipoGasto(6), ObtenerUsuario(7), "Regalos corporativos mensuales", 1200));
-            AltaPago(new PagoRecurrente(new DateTime(2025, 09, 01), new DateTime(2025, 12, 01), MetodoDePago.EFECTIVO, ObtenerTipoGasto(7), ObtenerUsuario(8), "Publicidad mensual en redes", 5000));
-            AltaPago(new PagoRecurrente(new DateTime(2025, 10, 05), new DateTime(2025, 12, 05), MetodoDePago.DEBITO, ObtenerTipoGasto(8), ObtenerUsuario(9), "Mantenimiento mensual de equipos", 2800));
-            AltaPago(new PagoRecurrente(new DateTime(2025, 01, 20), new DateTime(2025, 07, 20), MetodoDePago.CREDITO, ObtenerTipoGasto(4), ObtenerUsuario(10), "Suscripción a plataforma de diseño", 1600));
-            AltaPago(new PagoRecurrente(new DateTime(2025, 02, 10), new DateTime(2025, 08, 10), MetodoDePago.EFECTIVO, ObtenerTipoGasto(5), ObtenerUsuario(11), "Taller mensual de habilidades blandas", 2200));
-            AltaPago(new PagoRecurrente(new DateTime(2025, 03, 01), new DateTime(2025, 06, 01), MetodoDePago.DEBITO, ObtenerTipoGasto(9), ObtenerUsuario(12), "Viáticos mensuales por capacitaciones", 3100));
-            AltaPago(new PagoRecurrente(new DateTime(2025, 04, 12), new DateTime(2025, 10, 12), MetodoDePago.CREDITO, ObtenerTipoGasto(0), ObtenerUsuario(13), "Catering mensual para reuniones", 1800));
-            AltaPago(new PagoRecurrente(new DateTime(2025, 05, 05), new DateTime(2025, 09, 05), MetodoDePago.EFECTIVO, ObtenerTipoGasto(1), ObtenerUsuario(14), "Transporte mensual interdepartamental", 950));
-            AltaPago(new PagoRecurrente(new DateTime(2025, 06, 18), new DateTime(2025, 12, 18), MetodoDePago.DEBITO, ObtenerTipoGasto(2), ObtenerUsuario(15), "Eventos mensuales de equipo", 2700));
-            AltaPago(new PagoRecurrente(new DateTime(2025, 07, 01), new DateTime(2025, 10, 01), MetodoDePago.CREDITO, ObtenerTipoGasto(3), ObtenerUsuario(16), "Alquiler de sala de reuniones", 4000));
-            AltaPago(new PagoRecurrente(new DateTime(2025, 08, 20), new DateTime(2025, 12, 20), MetodoDePago.EFECTIVO, ObtenerTipoGasto(6), ObtenerUsuario(17), "Regalos mensuales para clientes", 1100));
-            AltaPago(new PagoRecurrente(new DateTime(2025, 09, 10), new DateTime(2025, 12, 10), MetodoDePago.DEBITO, ObtenerTipoGasto(7), ObtenerUsuario(18), "Campaña mensual de marketing", 4800));
-            AltaPago(new PagoRecurrente(new DateTime(2025, 10, 01), new DateTime(2025, 12, 01), MetodoDePago.CREDITO, ObtenerTipoGasto(8), ObtenerUsuario(19), "Servicio técnico mensual", 2500));
-            AltaPago(new PagoRecurrente(new DateTime(2025, 01, 05), new DateTime(2025, 06, 05), MetodoDePago.EFECTIVO, ObtenerTipoGasto(9), ObtenerUsuario(20), "Viáticos mensuales por visitas", 3300));
-            AltaPago(new PagoRecurrente(new DateTime(2025, 02, 22), new DateTime(2025, 08, 22), MetodoDePago.DEBITO, ObtenerTipoGasto(0), ObtenerUsuario(21), "Almuerzo mensual con proveedores", 1700));
-            AltaPago(new PagoRecurrente(new DateTime(2025, 03, 30), new DateTime(2025, 09, 30), MetodoDePago.CREDITO, ObtenerTipoGasto(1), ObtenerUsuario(2), "Transporte mensual para capacitaciones", 1000));
-            AltaPago(new PagoRecurrente(new DateTime(2025, 04, 15), new DateTime(2025, 12, 15), MetodoDePago.EFECTIVO, ObtenerTipoGasto(2), ObtenerUsuario(3), "Eventos mensuales de integración", 2600));
-            AltaPago(new PagoRecurrente(new DateTime(2025, 05, 01), new DateTime(2025, 10, 01), MetodoDePago.DEBITO, ObtenerTipoGasto(3), ObtenerUsuario(4), "Alquiler mensual de proyectores", 3900));
+            AltaPago(new PagoRecurrente(new DateTime(2025, 01, 10), new DateTime(2025, 06, 10), MetodoDePago.DEBITO, ObtenerTipoGasto(5), ObtenerUsuario(1), "Suscripción Adobe Creative Cloud", 1800));
+            AltaPago(new PagoRecurrente(new DateTime(2025, 02, 01), new DateTime(2025, 12, 01), MetodoDePago.CREDITO, ObtenerTipoGasto(6), ObtenerUsuario(2), "Curso mensual de inglés técnico", 2500));
+            AltaPago(new PagoRecurrente(new DateTime(2025, 03, 15), new DateTime(2025, 09, 15), MetodoDePago.EFECTIVO, ObtenerTipoGasto(10), ObtenerUsuario(3), "Viáticos mensuales por proyecto", 3200));
+            AltaPago(new PagoRecurrente(new DateTime(2025, 04, 05), new DateTime(2025, 07, 05), MetodoDePago.DEBITO, ObtenerTipoGasto(1), ObtenerUsuario(4), "Almuerzo mensual con cliente", 1500));
+            AltaPago(new PagoRecurrente(new DateTime(2025, 05, 20), new DateTime(2025, 11, 20), MetodoDePago.CREDITO, ObtenerTipoGasto(2), ObtenerUsuario(5), "Transporte mensual oficina", 900));
+            AltaPago(new PagoRecurrente(new DateTime(2025, 06, 01), new DateTime(2025, 12, 01), MetodoDePago.EFECTIVO, ObtenerTipoGasto(3), ObtenerUsuario(6), "After mensual de integración", 2000));
+            AltaPago(new PagoRecurrente(new DateTime(2025, 07, 10), new DateTime(2025, 10, 10), MetodoDePago.DEBITO, ObtenerTipoGasto(4), ObtenerUsuario(7), "Alquiler de equipamiento", 3500));
+            AltaPago(new PagoRecurrente(new DateTime(2025, 08, 15), new DateTime(2025, 12, 15), MetodoDePago.CREDITO, ObtenerTipoGasto(7), ObtenerUsuario(8), "Regalos corporativos mensuales", 1200));
+            AltaPago(new PagoRecurrente(new DateTime(2025, 09, 01), new DateTime(2025, 12, 01), MetodoDePago.EFECTIVO, ObtenerTipoGasto(8), ObtenerUsuario(9), "Publicidad mensual en redes", 5000));
+            AltaPago(new PagoRecurrente(new DateTime(2025, 10, 05), new DateTime(2025, 12, 05), MetodoDePago.DEBITO, ObtenerTipoGasto(9), ObtenerUsuario(10), "Mantenimiento mensual de equipos", 2800));
+            AltaPago(new PagoRecurrente(new DateTime(2025, 01, 20), new DateTime(2025, 07, 20), MetodoDePago.CREDITO, ObtenerTipoGasto(5), ObtenerUsuario(11), "Suscripción a plataforma de diseño", 1600));
+            AltaPago(new PagoRecurrente(new DateTime(2025, 02, 10), new DateTime(2025, 08, 10), MetodoDePago.EFECTIVO, ObtenerTipoGasto(6), ObtenerUsuario(12), "Taller mensual de habilidades blandas", 2200));
+            AltaPago(new PagoRecurrente(new DateTime(2025, 03, 01), new DateTime(2025, 06, 01), MetodoDePago.DEBITO, ObtenerTipoGasto(10), ObtenerUsuario(13), "Viáticos mensuales por capacitaciones", 3100));
+            AltaPago(new PagoRecurrente(new DateTime(2025, 04, 12), new DateTime(2025, 10, 12), MetodoDePago.CREDITO, ObtenerTipoGasto(1), ObtenerUsuario(14), "Catering mensual para reuniones", 1800));
+            AltaPago(new PagoRecurrente(new DateTime(2025, 05, 05), new DateTime(2025, 09, 05), MetodoDePago.EFECTIVO, ObtenerTipoGasto(2), ObtenerUsuario(15), "Transporte mensual interdepartamental", 950));
+            AltaPago(new PagoRecurrente(new DateTime(2025, 06, 18), new DateTime(2025, 12, 18), MetodoDePago.DEBITO, ObtenerTipoGasto(3), ObtenerUsuario(16), "Eventos mensuales de equipo", 2700));
+            AltaPago(new PagoRecurrente(new DateTime(2025, 07, 01), new DateTime(2025, 10, 01), MetodoDePago.CREDITO, ObtenerTipoGasto(4), ObtenerUsuario(17), "Alquiler de sala de reuniones", 4000));
+            AltaPago(new PagoRecurrente(new DateTime(2025, 08, 20), new DateTime(2025, 12, 20), MetodoDePago.EFECTIVO, ObtenerTipoGasto(7), ObtenerUsuario(18), "Regalos mensuales para clientes", 1100));
+            AltaPago(new PagoRecurrente(new DateTime(2025, 09, 10), new DateTime(2025, 12, 10), MetodoDePago.DEBITO, ObtenerTipoGasto(8), ObtenerUsuario(19), "Campaña mensual de marketing", 4800));
+            AltaPago(new PagoRecurrente(new DateTime(2025, 10, 01), new DateTime(2025, 12, 01), MetodoDePago.CREDITO, ObtenerTipoGasto(9), ObtenerUsuario(20), "Servicio técnico mensual", 2500));
+            AltaPago(new PagoRecurrente(new DateTime(2025, 01, 05), new DateTime(2025, 06, 05), MetodoDePago.EFECTIVO, ObtenerTipoGasto(10), ObtenerUsuario(21), "Viáticos mensuales por visitas", 3300));
+            AltaPago(new PagoRecurrente(new DateTime(2025, 02, 22), new DateTime(2025, 08, 22), MetodoDePago.DEBITO, ObtenerTipoGasto(1), ObtenerUsuario(22), "Almuerzo mensual con proveedores", 1700));
+            AltaPago(new PagoRecurrente(new DateTime(2025, 03, 30), new DateTime(2025, 09, 30), MetodoDePago.CREDITO, ObtenerTipoGasto(2), ObtenerUsuario(3), "Transporte mensual para capacitaciones", 1000));
+            AltaPago(new PagoRecurrente(new DateTime(2025, 04, 15), new DateTime(2025, 12, 15), MetodoDePago.EFECTIVO, ObtenerTipoGasto(3), ObtenerUsuario(4), "Eventos mensuales de integración", 2600));
+            AltaPago(new PagoRecurrente(new DateTime(2025, 05, 01), new DateTime(2025, 10, 01), MetodoDePago.DEBITO, ObtenerTipoGasto(4), ObtenerUsuario(5), "Alquiler mensual de proyectores", 3900));
+
 
             /// estos datos son de prueba jeje
-            AltaPago(new PagoUnico(new DateTime(2025, 11, 03), "REC-0041", MetodoDePago.EFECTIVO, ObtenerTipoGasto(1), ObtenerUsuario(4), "Cena en restaurante", 1500));
-            AltaPago(new PagoUnico(new DateTime(2025, 11, 07), "REC-0042", MetodoDePago.CREDITO, ObtenerTipoGasto(2), ObtenerUsuario(4), "Compra de libros técnicos", 3200));
-            AltaPago(new PagoUnico(new DateTime(2025, 11, 12), "REC-0043", MetodoDePago.DEBITO, ObtenerTipoGasto(3), ObtenerUsuario(4), "Suscripción mensual gimnasio", 2500));
-            AltaPago(new PagoUnico(new DateTime(2025, 11, 15), "REC-0044", MetodoDePago.EFECTIVO, ObtenerTipoGasto(0), ObtenerUsuario(4), "Almuerzo universitario", 900));
-            AltaPago(new PagoUnico(new DateTime(2025, 11, 20), "REC-0045", MetodoDePago.CREDITO, ObtenerTipoGasto(5), ObtenerUsuario(4), "Entrada a evento de tecnología", 1800));
+            AltaPago(new PagoUnico(new DateTime(2025, 11, 03), "REC-0041", MetodoDePago.EFECTIVO, ObtenerTipoGasto(2), ObtenerUsuario(5), "Cena en restaurante", 1500));
+            AltaPago(new PagoUnico(new DateTime(2025, 11, 07), "REC-0042", MetodoDePago.CREDITO, ObtenerTipoGasto(3), ObtenerUsuario(5), "Compra de libros técnicos", 3200));
+            AltaPago(new PagoUnico(new DateTime(2025, 11, 12), "REC-0043", MetodoDePago.DEBITO, ObtenerTipoGasto(4), ObtenerUsuario(5), "Suscripción mensual gimnasio", 2500));
+            AltaPago(new PagoUnico(new DateTime(2025, 11, 15), "REC-0044", MetodoDePago.EFECTIVO, ObtenerTipoGasto(1), ObtenerUsuario(5), "Almuerzo universitario", 900));
+            AltaPago(new PagoUnico(new DateTime(2025, 11, 20), "REC-0045", MetodoDePago.CREDITO, ObtenerTipoGasto(6), ObtenerUsuario(5), "Entrada a evento de tecnología", 1800));
 
-            AltaPago(new PagoRecurrente(new DateTime(2025, 09, 01), new DateTime(2026, 02, 01), MetodoDePago.DEBITO, ObtenerTipoGasto(4), ObtenerUsuario(4), "Suscripción Netflix", 790));
-            AltaPago(new PagoRecurrente(new DateTime(2025, 06, 15), new DateTime(2025, 12, 15), MetodoDePago.CREDITO, ObtenerTipoGasto(3), ObtenerUsuario(4), "Curso online de programación", 2200));
-            AltaPago(new PagoRecurrente(new DateTime(2025, 10, 01), new DateTime(2026, 03, 01), MetodoDePago.DEBITO, ObtenerTipoGasto(2), ObtenerUsuario(4), "Suscripción a revista digital", 450));
-            AltaPago(new PagoRecurrente(new DateTime(2025, 11, 10), new DateTime(2026, 08, 10), MetodoDePago.EFECTIVO, ObtenerTipoGasto(1), ObtenerUsuario(4), "Pago mensual de hosting web", 1300));
-            AltaPago(new PagoRecurrente(new DateTime(2025, 11, 01), new DateTime(2026, 04, 01), MetodoDePago.CREDITO, ObtenerTipoGasto(5), ObtenerUsuario(4), "Membresía coworking", 3500));
+            AltaPago(new PagoRecurrente(new DateTime(2025, 09, 01), new DateTime(2026, 02, 01), MetodoDePago.DEBITO, ObtenerTipoGasto(5), ObtenerUsuario(5), "Suscripción Netflix", 790));
+            AltaPago(new PagoRecurrente(new DateTime(2025, 06, 15), new DateTime(2025, 12, 15), MetodoDePago.CREDITO, ObtenerTipoGasto(4), ObtenerUsuario(5), "Curso online de programación", 2200));
+            AltaPago(new PagoRecurrente(new DateTime(2025, 11, 01), new DateTime(2026, 03, 01), MetodoDePago.DEBITO, ObtenerTipoGasto(3), ObtenerUsuario(5), "Suscripción a revista digital", 450));
+            AltaPago(new PagoRecurrente(new DateTime(2025, 11, 10), new DateTime(2026, 08, 10), MetodoDePago.EFECTIVO, ObtenerTipoGasto(2), ObtenerUsuario(5), "Pago mensual de hosting web", 1300));
+            AltaPago(new PagoRecurrente(new DateTime(2025, 11, 01), new DateTime(2026, 04, 01), MetodoDePago.CREDITO, ObtenerTipoGasto(6), ObtenerUsuario(5), "Membresía coworking", 3500));
+            AltaPago(new PagoRecurrente(new DateTime(2025, 12, 01), new DateTime(2026, 04, 01), MetodoDePago.CREDITO, ObtenerTipoGasto(6), ObtenerUsuario(5), "prueba", 3500));
+
         }
 
         public void AltaUsuario(Usuario usuario)
@@ -297,6 +300,11 @@ namespace Dominio
         {
             return _usuarios;
         }
+        public List<TipoGasto> TiposGastos()
+        {
+            return _tiposGastos;
+
+        }
 
         public List<string> ListaUsuarioPorEquipo(string nombre)
         {
@@ -352,6 +360,7 @@ namespace Dominio
                     aux.Add(item);
                 }
             }
+            aux.Sort();
             return aux;
         }
 

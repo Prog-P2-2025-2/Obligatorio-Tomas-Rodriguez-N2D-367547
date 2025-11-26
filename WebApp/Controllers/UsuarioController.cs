@@ -13,9 +13,11 @@ namespace WebApp.Controllers
             return View();
         }
 
-        public IActionResult VerPerfil()
+        public IActionResult VerPerfil(int idUsuario)
         {
-            Usuario unU = _sistema.ObtenerUsuario(1);
+            Usuario unU = _sistema.ObtenerUsuario(idUsuario);
+           // int montoTotalEsteMes = _sistema.MontoTotalPorUsuario();
+
             return View(unU);
         }
 

@@ -11,11 +11,8 @@ namespace WebApp.Controllers
 
         public IActionResult VerPagoCargados(int id)
         {
-            
-           // ViewBag.PagosUnicos = _sistema.ListarPagosUnicosPorIdDeUsuario(id);
-           // ViewBag.PagosRecurrentes = _sistema.ListarPagosRecurrentePorIdDeUsuario(id);
            ViewBag.Pagos = _sistema.ListarPagosPorIdDeUsuario(id);
-            return View();
+           return View();
         }
         [HttpGet]
         public IActionResult PagoUnico() {
