@@ -14,9 +14,15 @@
 </div>
 <div class="d-flex justify-content-center align-items-center" >
     <div class="text-center">
-        <a href="~/Pago/VerPagoCargados?id=@Context.Session.GetInt32("id")" class="btn btn-primary m-2">Ver todos los pagos de este mes</a>
+        <a href="~/Pago/VerPagoCargadosEsteMes?idUsuario=@Context.Session.GetInt32("id")" class="btn btn-primary m-2">Ver todos los pagos de este mes</a>
         <a href="~/Pago/PagoUnico?idUsuario=@Context.Session.GetInt32("id")" " class="btn btn-primary m-2">Cargar Pago unico</a>
         <a href="~/Pago/PagoRecurrente?idUsuario=@Context.Session.GetInt32("id")" class="btn btn-success m-2">Cargar pago recurrente</a>
         <a href="~/usuario/VerPerfil?idUsuario=@Context.Session.GetInt32("id")" class="btn btn-info m-2">Ver perfil</a>
+        @if (Context.Session.GetString("rol") == "gerente")
+        {
+             <a href="~/Pago/VerPagosDeEquipo?idUsuario=@Context.Session.GetInt32("id")" class="btn btn-info m-2">Ver Pagos Del Equipo</a>
+             <a href="~/TipoGasto/AltaTipoGasto" class="btn btn-info m-2">Alta tipo de gasto</a>
+             <a href="~/TipoGasto/ListaTipoGasto" class="btn btn-info m-2">Eliminar Tipo de Gasto</a>
+        }
     </div>
 </div>

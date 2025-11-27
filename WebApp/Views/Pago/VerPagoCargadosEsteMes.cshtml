@@ -1,50 +1,37 @@
 ﻿@using Dominio
+
 <h1 class="mb-4">Pagos de este mes</h1>
 @if (ViewBag.Pagos != null)
 {
 <table class="table table-striped table-bordered table-hover">
     <thead class="table-dark">
-
-       
-                        
+                     
         
         <tr>
             <th>Descripción</th>
             <th>Fecha</th>
-
             <th>Monto</th>
             <th>Monto Con Descuento o Recargo</th>
             <th>Tipo de Pago</th>
+                <th>Metodo De Pago</th>
            
         </tr>
     </thead>
     <tbody>
         @foreach (Pago item in ViewBag.Pagos)
-        {
-            if (item is PagoRecurrente)
-            {
+        {      
                 <tr>
                     <td>@item.Descripcion</td>
                     <td>@item.FechaEsteMes().ToString("dd/MM/yyyy")</td>
                     <td>@item.Monto</td>
                     <td>@item.DescuentoYRecargo()</td>
-
-                    <td><span class="badge bg-primary">Pago Recurrente</span></td>
+                    <td><span class="badge bg-primary">@item.TipoDePago()</span></td>
+                        <td>@item.MetodoDePago</td>
                 </tr>
-            }
-            if (item is PagoUnico)
-            {
-                <tr>
-                    <td>@item.Descripcion</td>
-                    <td>@item.FechaEsteMes().ToString("dd/MM/yyyy")</td>
-                    <td>@item.Monto</td>
-                    <td>@item.DescuentoYRecargo()</td>
-                    <td><span class="badge bg-success">Pago Único</span></td>
-                </tr>
-            }
-        }
+            }        
     </tbody>
     </table>
+    
 }
 else
 {

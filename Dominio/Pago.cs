@@ -92,6 +92,7 @@ namespace Dominio
                    $"Numero de recibo: {TipoGasto.Nombre}\n" +
                    $"{MensajePago()}\n";
         }
+        public abstract string TipoDePago();
         public int CompareTo(Pago? other) {
 
             if (other == null)
@@ -99,8 +100,8 @@ namespace Dominio
                 return -1;
             }
             return Monto.CompareTo(other.Monto) * -1;
-
-
         }
+        public abstract bool PagoValidoFecha(DateTime fechaInicial, DateTime fechaFinal);
+       
     }
 }

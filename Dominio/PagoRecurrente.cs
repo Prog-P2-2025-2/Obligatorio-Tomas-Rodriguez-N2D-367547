@@ -35,7 +35,7 @@ namespace Dominio
         private void ValidarFechaFinal()
         {
 
-            if (FechaFinal < FechaInicio)
+            if (FechaFinal < FechaInicio && FechaFinal != new DateTime())
             {
                 throw new Exception("La fecha final no puede ser anterior a la fecha de inicio.");
             }
@@ -95,6 +95,21 @@ namespace Dominio
                 $"Fecha de inicio: {FechaInicio.ToString("dd/MM/yyyy")}" +
                     $"Fecha final: {FechaFinal.ToString("dd/MM/yyyy")}";
         }
-
+        public override bool PagoValidoFecha(DateTime fechaInicial, DateTime fechaFinal)
+        {
+            if (FechaInicio <= fechaFinal && FechaFinal >= fechaInicial)
+            {
+                return true;
+            }
+            if (FechaFinal == new DateTime() && FechaInicio >= fechaInicial)
+            {
+                return true;
+            }
+            return false;
+        }
+        public override string TipoDePago()
+        {
+            return "Pago Recurrente";
+        }
     }
 }

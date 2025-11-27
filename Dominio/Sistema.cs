@@ -10,7 +10,7 @@ namespace Dominio
     public class Sistema
     {
         private static Sistema _instancia;
-        
+
 
         private List<Pago> _pagos = new List<Pago>();
         private List<Usuario> _usuarios = new List<Usuario>();
@@ -27,7 +27,7 @@ namespace Dominio
 
             PreCarga();
         }
-    
+
         public void PreCarga()
         {
             PreCargaEquipo();
@@ -37,7 +37,7 @@ namespace Dominio
 
         }
 
-        private void PreCargaUsuario() 
+        private void PreCargaUsuario()
         {
             AltaUsuario(new Gerente("Juan", "Perez", "123456789", new DateTime(2025, 10, 20), ObtenerEquipo(1)));
             AltaUsuario(new Gerente("Al", "Gomez", "234567890", new DateTime(2025, 10, 21), ObtenerEquipo(2)));
@@ -64,7 +64,7 @@ namespace Dominio
 
 
         }
-        private void PreCargaEquipo() 
+        private void PreCargaEquipo()
         {
             AltaEquipo(new Equipo("Administracion"));
             AltaEquipo(new Equipo("Desarrollo"));
@@ -85,14 +85,14 @@ namespace Dominio
             AltaTipoGasto(new TipoGasto("VIÁTICOS", "Gastos de alojamiento, comida y transporte durante viajes laborales"));
 
         }
-        private void PreCargaPagos() 
+        private void PreCargaPagos()
         {
-            AltaPago(new PagoUnico(new DateTime(2025, 01, 12), "REC-0001", MetodoDePago.EFECTIVO, ObtenerTipoGasto(1), ObtenerUsuario(1), "Almuerzo ejecutivo", 1200));
+            AltaPago(new PagoUnico(new DateTime(2024, 01, 12), "REC-0001", MetodoDePago.EFECTIVO, ObtenerTipoGasto(1), ObtenerUsuario(1), "Almuerzo ejecutivo", 1200));
             AltaPago(new PagoUnico(new DateTime(2025, 02, 05), "REC-0002", MetodoDePago.DEBITO, ObtenerTipoGasto(2), ObtenerUsuario(2), "Taxi a reunión", 800));
             AltaPago(new PagoUnico(new DateTime(2025, 03, 18), "REC-0003", MetodoDePago.CREDITO, ObtenerTipoGasto(3), ObtenerUsuario(3), "After team", 1500));
             AltaPago(new PagoUnico(new DateTime(2025, 04, 10), "REC-0004", MetodoDePago.EFECTIVO, ObtenerTipoGasto(4), ObtenerUsuario(4), "Mouse ergonómico", 3200));
             AltaPago(new PagoUnico(new DateTime(2025, 05, 22), "REC-0005", MetodoDePago.DEBITO, ObtenerTipoGasto(5), ObtenerUsuario(5), "Suscripción Canva", 4500));
-            AltaPago(new PagoUnico(new DateTime(2025, 06, 03), "REC-0006", MetodoDePago.CREDITO, ObtenerTipoGasto(6), ObtenerUsuario(6), "Curso de liderazgo", 18000));
+            AltaPago(new PagoUnico(new DateTime(2024, 06, 03), "REC-0006", MetodoDePago.CREDITO, ObtenerTipoGasto(6), ObtenerUsuario(6), "Curso de liderazgo", 18000));
             AltaPago(new PagoUnico(new DateTime(2025, 07, 14), "REC-0007", MetodoDePago.EFECTIVO, ObtenerTipoGasto(7), ObtenerUsuario(7), "Regalo aniversario", 2500));
             AltaPago(new PagoUnico(new DateTime(2025, 08, 26), "REC-0008", MetodoDePago.DEBITO, ObtenerTipoGasto(8), ObtenerUsuario(8), "Publicidad en redes", 10000));
             AltaPago(new PagoUnico(new DateTime(2025, 09, 07), "REC-0009", MetodoDePago.CREDITO, ObtenerTipoGasto(9), ObtenerUsuario(9), "Reparación notebook", 6200));
@@ -108,8 +108,8 @@ namespace Dominio
             AltaPago(new PagoUnico(new DateTime(2025, 07, 13), "REC-0019", MetodoDePago.EFECTIVO, ObtenerTipoGasto(9), ObtenerUsuario(19), "Mantenimiento impresora", 3100));
             AltaPago(new PagoUnico(new DateTime(2025, 08, 24), "REC-0020", MetodoDePago.DEBITO, ObtenerTipoGasto(10), ObtenerUsuario(20), "Alojamiento por viaje", 34200));
             AltaPago(new PagoUnico(new DateTime(2025, 09, 05), "REC-0021", MetodoDePago.CREDITO, ObtenerTipoGasto(1), ObtenerUsuario(21), "Desayuno reunión", 1250));
-            AltaPago(new PagoUnico(new DateTime(2025, 10, 17), "REC-0022", MetodoDePago.EFECTIVO, ObtenerTipoGasto(2), ObtenerUsuario(22), "Estacionamiento", 600));
-            AltaPago(new PagoUnico(new DateTime(2025, 11, 29), "REC-0023", MetodoDePago.DEBITO, ObtenerTipoGasto(3), ObtenerUsuario(1), "Concierto integración", 22000));
+            AltaPago(new PagoUnico(new DateTime(2024, 10, 17), "REC-0022", MetodoDePago.EFECTIVO, ObtenerTipoGasto(2), ObtenerUsuario(22), "Estacionamiento", 600));
+            AltaPago(new PagoUnico(new DateTime(2020, 11, 29), "REC-0023", MetodoDePago.DEBITO, ObtenerTipoGasto(3), ObtenerUsuario(1), "Concierto integración", 22000));
             AltaPago(new PagoUnico(new DateTime(2025, 12, 10), "REC-0024", MetodoDePago.CREDITO, ObtenerTipoGasto(4), ObtenerUsuario(2), "Disco SSD", 12900));
             AltaPago(new PagoUnico(new DateTime(2025, 01, 03), "REC-0025", MetodoDePago.EFECTIVO, ObtenerTipoGasto(5), ObtenerUsuario(3), "Herramienta SaaS", 58000));
             AltaPago(new PagoUnico(new DateTime(2025, 02, 14), "REC-0026", MetodoDePago.DEBITO, ObtenerTipoGasto(6), ObtenerUsuario(4), "Certificación nube", 45000));
@@ -129,7 +129,7 @@ namespace Dominio
             AltaPago(new PagoUnico(new DateTime(2025, 05, 30), "REC-0041", MetodoDePago.DEBITO, ObtenerTipoGasto(1), ObtenerUsuario(22), "Almuerzo de cierre de proyecto", 3100));
             AltaPago(new PagoUnico(new DateTime(2025, 06, 11), "REC-0042", MetodoDePago.CREDITO, ObtenerTipoGasto(2), ObtenerUsuario(6), "Transporte a evento externo", 1900));
 
-            AltaPago(new PagoRecurrente(new DateTime(2025, 01, 10), new DateTime(2025, 06, 10), MetodoDePago.DEBITO, ObtenerTipoGasto(5), ObtenerUsuario(1), "Suscripción Adobe Creative Cloud", 1800));
+            AltaPago(new PagoRecurrente(new DateTime(2025, 01, 10), new DateTime(2025, 12, 10), MetodoDePago.DEBITO, ObtenerTipoGasto(5), ObtenerUsuario(1), "Suscripción Adobe Creative Cloud", 1800));
             AltaPago(new PagoRecurrente(new DateTime(2025, 02, 01), new DateTime(2025, 12, 01), MetodoDePago.CREDITO, ObtenerTipoGasto(6), ObtenerUsuario(2), "Curso mensual de inglés técnico", 2500));
             AltaPago(new PagoRecurrente(new DateTime(2025, 03, 15), new DateTime(2025, 09, 15), MetodoDePago.EFECTIVO, ObtenerTipoGasto(10), ObtenerUsuario(3), "Viáticos mensuales por proyecto", 3200));
             AltaPago(new PagoRecurrente(new DateTime(2025, 04, 05), new DateTime(2025, 07, 05), MetodoDePago.DEBITO, ObtenerTipoGasto(1), ObtenerUsuario(4), "Almuerzo mensual con cliente", 1500));
@@ -163,24 +163,26 @@ namespace Dominio
             AltaPago(new PagoUnico(new DateTime(2025, 11, 15), "REC-0044", MetodoDePago.EFECTIVO, ObtenerTipoGasto(1), ObtenerUsuario(5), "Almuerzo universitario", 900));
             AltaPago(new PagoUnico(new DateTime(2025, 11, 20), "REC-0045", MetodoDePago.CREDITO, ObtenerTipoGasto(6), ObtenerUsuario(5), "Entrada a evento de tecnología", 1800));
 
+            AltaPago(new PagoUnico(new DateTime(2025, 11, 20), "REC-0045", MetodoDePago.CREDITO, ObtenerTipoGasto(6), ObtenerUsuario(1), "Entrada a evento de tecnología", 100000));
+            AltaPago(new PagoUnico(new DateTime(2025, 11, 20), "REC-0045", MetodoDePago.CREDITO, ObtenerTipoGasto(6), ObtenerUsuario(1), "Entrada a evento de tecnología", 1000));
             AltaPago(new PagoRecurrente(new DateTime(2025, 09, 01), new DateTime(2026, 02, 01), MetodoDePago.DEBITO, ObtenerTipoGasto(5), ObtenerUsuario(5), "Suscripción Netflix", 790));
             AltaPago(new PagoRecurrente(new DateTime(2025, 06, 15), new DateTime(2025, 12, 15), MetodoDePago.CREDITO, ObtenerTipoGasto(4), ObtenerUsuario(5), "Curso online de programación", 2200));
             AltaPago(new PagoRecurrente(new DateTime(2025, 11, 01), new DateTime(2026, 03, 01), MetodoDePago.DEBITO, ObtenerTipoGasto(3), ObtenerUsuario(5), "Suscripción a revista digital", 450));
             AltaPago(new PagoRecurrente(new DateTime(2025, 11, 10), new DateTime(2026, 08, 10), MetodoDePago.EFECTIVO, ObtenerTipoGasto(2), ObtenerUsuario(5), "Pago mensual de hosting web", 1300));
             AltaPago(new PagoRecurrente(new DateTime(2025, 11, 01), new DateTime(2026, 04, 01), MetodoDePago.CREDITO, ObtenerTipoGasto(6), ObtenerUsuario(5), "Membresía coworking", 3500));
-            AltaPago(new PagoRecurrente(new DateTime(2025, 12, 01), new DateTime(2026, 04, 01), MetodoDePago.CREDITO, ObtenerTipoGasto(6), ObtenerUsuario(5), "prueba", 3500));
+            AltaPago(new PagoRecurrente(new DateTime(2025, 12, 01), new DateTime(), MetodoDePago.CREDITO, ObtenerTipoGasto(6), ObtenerUsuario(5), "prueba", 3500));
 
         }
 
         public void AltaUsuario(Usuario usuario)
         {
-            if (usuario == null) 
+            if (usuario == null)
             {
                 throw new Exception("El Usuario no puede ser nulo");
             }
             //if (_usuarios.Contains(usuario)) { 
-            
-              //  throw new Exception ("EL usuario ya existe");
+
+            //  throw new Exception ("EL usuario ya existe");
             //}
             usuario.Email = usuario.GenerarEmail(_usuarios);
             usuario.Validar();
@@ -195,9 +197,9 @@ namespace Dominio
                 throw new Exception("El Equipo no existe");
             }
             equipo.Validar();
-            if (_equipos.Contains(equipo)) { 
+            if (_equipos.Contains(equipo)) {
 
-              throw new Exception ("EL equipo ya existe");
+                throw new Exception("EL equipo ya existe");
             }
             _equipos.Add(equipo);
         }
@@ -209,7 +211,7 @@ namespace Dominio
                 throw new Exception("El tipo de gato no puede ser nulo");
             }
             tipoGasto.Validar();
-            if (_tiposGastos.Contains(tipoGasto)) 
+            if (_tiposGastos.Contains(tipoGasto))
             {
                 throw new Exception("El tipo de gasto ya existe");
             }
@@ -218,7 +220,7 @@ namespace Dominio
 
         public void AltaPago(Pago pago)
         {
-            if (pago== null)
+            if (pago == null)
             {
                 throw new Exception("El pago no puede ser nulo");
             }
@@ -259,14 +261,14 @@ namespace Dominio
             }
             return null;
         }
-        public Usuario ObtenerUsuario(string email) 
+        public Usuario ObtenerUsuario(string email)
         {
-            foreach(Usuario item in _usuarios) {
+            foreach (Usuario item in _usuarios) {
 
                 if (item.Email == email)
                 {
                     return item;
-                }          
+                }
             }
             return null;
         }
@@ -282,7 +284,7 @@ namespace Dominio
                 }
 
             }
-                return null;
+            return null;
         }
         public Usuario ObtenerUsuario(int id)
         {
@@ -296,7 +298,7 @@ namespace Dominio
             return null;
         }
 
-        public List<Usuario> Usuarios() 
+        public List<Usuario> Usuarios()
         {
             return _usuarios;
         }
@@ -336,20 +338,20 @@ namespace Dominio
                    $"Email: {usuario.Email}\n";
         }
 
-      public List<Pago> ListarPagosPorEmailDeUsuario(string email)
-       {
+        public List<Pago> ListarPagosPorEmailDeUsuario(string email)
+        {
             Usuario unU = ObtenerUsuario(email);
             List<Pago> aux = new List<Pago>();
-            foreach(Pago item in _pagos)
+            foreach (Pago item in _pagos)
             {
-                if(unU.Email == item.Usuario.Email)
+                if (unU.Email == item.Usuario.Email)
                 {
                     aux.Add(item);
                 }
             }
             return aux;
         }
-        public List<Pago> ListarPagosPorIdDeUsuario(int id)
+        public List<Pago> ListarPagosDeEsteMesPorIdUsuairo(int id)
         {
             Usuario unU = ObtenerUsuario(id);
             List<Pago> aux = new List<Pago>();
@@ -378,7 +380,7 @@ namespace Dominio
                         aux.Add((PagoUnico)item);
                     }
                 }
-            } 
+            }
             return aux;
         }
         public List<PagoRecurrente> ListarPagosRecurrentePorIdDeUsuario(int id)
@@ -407,7 +409,7 @@ namespace Dominio
             if (unU == null) throw new Exception("El usuario con ese mail no existe");
 
 
-            foreach(Pago item in _pagos)
+            foreach (Pago item in _pagos)
             {
                 if (item is PagoUnico)
                 {
@@ -444,6 +446,111 @@ namespace Dominio
             return aux;
         }
 
+
+        public decimal MontoTotalConRecargosODescuento(Usuario unU) {
+            decimal montoTotal = 0;
+            foreach (Pago item in _pagos)
+            {
+                if (unU.Id == item.Usuario.Id && item.PagoVigenteEsteMes())
+                {
+                    montoTotal += item.DescuentoYRecargo();
+                }
+
+            }
+
+            return montoTotal;
+        }
+        public decimal MontoTotal(Usuario unU)
+        {
+            decimal montoTotal = 0;
+            foreach (Pago item in _pagos)
+            {
+                if (unU.Id == item.Usuario.Id && item.PagoVigenteEsteMes())
+                {
+                    montoTotal += item.Monto;
+                }
+
+            }
+            return montoTotal;
+        }
+        public List<Pago> ListarPagosPorEquipo(int idUsuario)
+        {
+            List<Pago> aux = new List<Pago>();
+            Usuario unU = ObtenerUsuario(idUsuario);
+            foreach (Pago item in _pagos)
+            {
+                if (unU.IdEquipo() == item.Usuario.IdEquipo() && item.PagoVigenteEsteMes())
+                {
+                    aux.Add(item);
+                }
+            }
+            return aux;
+        }
+        public List<Pago> BuscarPagosPorFechas(DateTime fechaInicial, DateTime fechaFinal, int idUsuario)
+        {
+            List<Pago> aux = new List<Pago>();
+            Usuario unU = ObtenerUsuario(idUsuario);
+            foreach (Pago item in _pagos)
+            {
+                if (unU.IdEquipo() == item.Usuario.IdEquipo())
+                {
+                    if (item.PagoValidoFecha(fechaInicial, fechaFinal))
+                    {
+                        aux.Add(item);
+                    }
+                }
+            }
+
+            return aux;
+        }
+        public Equipo ObtenerEquipoDeUsuario(int idUsuario)
+        {
+            Usuario unU = ObtenerUsuario(idUsuario);
+            foreach (Equipo item in _equipos)
+            {
+                if (item.Id == unU.IdEquipo())
+                {
+                    return item;
+                }
+
+            }
+            return null;
+        }
+        public List<Usuario> ListarUsuarioDelEquipo(int idUsuario)
+        {
+            List<Usuario> aux = new List<Usuario>();
+            Usuario unU = ObtenerUsuario(idUsuario);
+            foreach (Usuario item in _usuarios)
+            {
+                if (unU.IdEquipo() == item.IdEquipo() && unU.Id != item.Id)
+                {
+                    aux.Add(item);
+                }
+            }
+
+            return aux;
+        }
+
+        public bool TipoGastoEnUso(int idTipoGasto) {
+            TipoGasto unTG = ObtenerTipoGasto(idTipoGasto);
+            foreach(Pago item in _pagos){
+            if(item.TipoGasto.Id == unTG.Id)
+                {
+                    return true;
+                }           
+            }
+            return false;
+        }
+        public TipoGasto EliminarTipoGasto(int idTipoGasto)
+        {
+            TipoGasto unTG = ObtenerTipoGasto(idTipoGasto);
+            if (unTG != null)
+            {
+                _tiposGastos.Remove(unTG);
+                return unTG;
+            }
+            return null;
+        }
 
     }
 }

@@ -115,5 +115,9 @@ namespace Dominio
 
             return respuesta;
         }
+        public int IdEquipo()
+        {
+           return UnEquipo.Id;
+        }
     }
 }

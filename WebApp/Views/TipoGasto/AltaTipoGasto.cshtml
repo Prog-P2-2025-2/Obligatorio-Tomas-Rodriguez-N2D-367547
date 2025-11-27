@@ -1,0 +1,32 @@
+﻿@using Dominio
+@model TipoGasto;
+
+@if (ViewBag.mensaje != null)
+{
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        @ViewBag.mensaje
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+}
+
+
+<form method="post">
+    
+
+    <p>Nombre</p>
+    <input type="text" name="Nombre" value="@Model.Nombre" />
+    <p>Descripcion</p>
+    <input type="text" name="Descripcion" value="@Model.Descripcion" />
+
+
+
+
+    <button type="submit" class="btn btn-primary px-4">
+        <i class="bi bi-check-circle me-1"></i> Guardar
+    </button>
+
+
+
+
+
+</form>

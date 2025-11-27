@@ -9,10 +9,21 @@ namespace WebApp.Controllers
         private Sistema _sistema = Sistema.Instancia();
         
 
-        public IActionResult VerPagoCargados(int id)
+        public IActionResult VerPagoCargadosEsteMes(int idUsuario)
         {
-           ViewBag.Pagos = _sistema.ListarPagosPorIdDeUsuario(id);
+           ViewBag.Pagos = _sistema.ListarPagosDeEsteMesPorIdUsuairo(idUsuario);
            return View();
+        }
+        public IActionResult VerPagosDeEquipo(int idUsuario)
+        {
+            ViewBag.Equipo = _sistema.ObtenerEquipoDeUsuario(idUsuario);
+            ViewBag.PagosDelEquipo = _sistema.ListarPagosPorEquipo(idUsuario);
+            return View();
+        }
+        public IActionResult BuscarPagos(DateTime fechaInicial, DateTime fechaFinal, int idUsuario)
+        {
+            ViewBag.PagosDelEquipo = _sistema.BuscarPagosPorFechas(fechaInicial, fechaFinal, idUsuario);
+            return View("VerPagosDeEquipo");
         }
         [HttpGet]
         public IActionResult PagoUnico() {

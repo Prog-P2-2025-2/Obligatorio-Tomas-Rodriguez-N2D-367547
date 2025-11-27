@@ -16,7 +16,9 @@ namespace WebApp.Controllers
         public IActionResult VerPerfil(int idUsuario)
         {
             Usuario unU = _sistema.ObtenerUsuario(idUsuario);
-           // int montoTotalEsteMes = _sistema.MontoTotalPorUsuario();
+            ViewBag.MontoTotal = _sistema.MontoTotal(unU);
+            ViewBag.MontoTotalAplicado = _sistema.MontoTotalConRecargosODescuento(unU);
+            ViewBag.ListaUsuarioDelEquipo = _sistema.ListarUsuarioDelEquipo(idUsuario);
 
             return View(unU);
         }

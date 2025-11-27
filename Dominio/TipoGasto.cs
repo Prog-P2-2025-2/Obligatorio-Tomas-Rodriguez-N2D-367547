@@ -12,7 +12,7 @@ namespace Dominio
         private static int _ultimoId = 1;
         public string Nombre { get; set; }
         public string Descripcion { get; set; }
-
+        public TipoGasto() { }
 
         public TipoGasto(string nombre, string descripcion) {
             Id = _ultimoId++;

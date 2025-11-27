@@ -1,0 +1,55 @@
+﻿@using Dominio
+
+<p>@ViewBag.Equipo.Nombre</p>
+
+<form action="~/pago/BuscarPagos?idUsuario=@Context.Session.GetInt32("id")" method="get">
+<p>FechaInicial</p>
+    <input type="date" name="fechaInicial" value="" />
+ <p>Fecha Final</p>
+    <input type="date" name="fechaFinal" value="" />
+    <input type="hidden" name="idUsuario" value="@Context.Session.GetInt32("id")" />
+    <button type="submit" class="btn btn-outline-primary">
+        <i class="bi bi-search">BUSCAR</i>
+    </button>
+
+</form>
+@if (ViewBag.PagosDelEquipo != null)
+{
+<table class="table table-striped table-bordered table-hover">
+    <thead class="table-dark">
+
+
+        <tr>
+            <th>Descripción</th>
+            <th>Fecha</th>
+            <th>Monto</th>
+            <th>Monto Con Descuento o Recargo</th>
+            <th>Tipo de Pago</th>
+            <th>MetodoDePago</th>
+            
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Pago item in ViewBag.PagosDelEquipo)
+        {
+              <tr>
+                    <td>@item.Descripcion</td>
+                    <td>@item.FechaEsteMes().ToString("dd/MM/yyyy")</td>
+                    <td>@item.Monto</td>
+                    <td>@item.DescuentoYRecargo()</td>
+
+                    <td><span class="badge bg-primary">@item.TipoDePago()</span></td>
+                        <td>@item.MetodoDePago</td>
+               </tr>
+            
+        
+        }
+    </tbody>
+</table>
+
+}
+else
+{
+<p>No hay pagos de este mes</p>
+}

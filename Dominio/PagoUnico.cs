@@ -77,6 +77,18 @@ namespace Dominio
 
             return Monto - ((decimal)Monto * (decimal)0.10);
         }
-
+        public override bool PagoValidoFecha(DateTime fechaInicial, DateTime fechaFinal)
+        {
+            if (FechaPago >= fechaInicial && FechaPago <= fechaFinal)
+            {
+                return true;
+            }
+           
+            return false;
+        }
+        public override string TipoDePago()
+        {
+            return "Pago Unico";
+        }
     }
 }
