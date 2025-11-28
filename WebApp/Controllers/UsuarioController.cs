@@ -1,8 +1,10 @@
 ﻿using Dominio;
 using Microsoft.AspNetCore.Mvc;
+using WebApp.Filtros;
 
 namespace WebApp.Controllers
 {
+    [Logueado]
     public class UsuarioController : Controller
     {
         private Sistema _sistema = Sistema.Instancia();

@@ -1,27 +1,34 @@
 ﻿using Dominio;
 using Microsoft.AspNetCore.Mvc;
 using System.Reflection;
+using WebApp.Filtros;
 
 namespace WebApp.Controllers
 {
+    [Logueado]
     public class PagoController : Controller
     {
         private Sistema _sistema = Sistema.Instancia();
-        
 
+        [HttpGet]
         public IActionResult VerPagoCargadosEsteMes(int idUsuario)
         {
            ViewBag.Pagos = _sistema.ListarPagosDeEsteMesPorIdUsuairo(idUsuario);
-           return View();
+          
+                return View();
         }
+        [GerenteAdmin]
+        [HttpGet]
         public IActionResult VerPagosDeEquipo(int idUsuario)
         {
             ViewBag.Equipo = _sistema.ObtenerEquipoDeUsuario(idUsuario);
             ViewBag.PagosDelEquipo = _sistema.ListarPagosPorEquipo(idUsuario);
             return View();
         }
+        
         public IActionResult BuscarPagos(DateTime fechaInicial, DateTime fechaFinal, int idUsuario)
         {
+            ViewBag.Equipo = _sistema.ObtenerEquipoDeUsuario(idUsuario);
             ViewBag.PagosDelEquipo = _sistema.BuscarPagosPorFechas(fechaInicial, fechaFinal, idUsuario);
             return View("VerPagosDeEquipo");
         }
@@ -42,7 +49,7 @@ namespace WebApp.Controllers
                 pagoUnico.MetodoDePago = metodoDePago;
                 if (pagoUnico.TipoGasto == null)
                 {
-                    throw new Exception("No existe el cargo");
+                    throw new Exception("No existe el Tipo de pago");
                 }
 
                 _sistema.AltaPago(pagoUnico);
@@ -76,7 +83,7 @@ namespace WebApp.Controllers
                 pagoRecurrente.MetodoDePago = metodoDePago;
                 if (pagoRecurrente.TipoGasto == null)
                 {
-                    throw new Exception("No existe el cargo");
+                    throw new Exception("No existe tipo de gasto");
                 }
                 _sistema.AltaPago(pagoRecurrente);
                 return RedirectToAction("index", "Usuario", new { mensaje = $"Se cargo el pago recurrente {pagoRecurrente.Descripcion}" });

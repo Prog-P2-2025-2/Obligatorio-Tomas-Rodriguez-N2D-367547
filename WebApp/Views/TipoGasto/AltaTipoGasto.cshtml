@@ -1,32 +1,42 @@
 ﻿@using Dominio
 @model TipoGasto;
 
+<div class="container mt-4">
+
 @if (ViewBag.mensaje != null)
 {
-    <div class="alert alert-danger alert-dismissible fade show" role="alert">
-        @ViewBag.mensaje
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-    </div>
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            @ViewBag.mensaje
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
 }
 
+    <div class="card shadow">
 
-<form method="post">
-    
+        <div class="card-header bg-primary text-white">
+            <h5 class="mb-0">Alta de Tipo de Gasto</h5>
+        </div>
 
-    <p>Nombre</p>
-    <input type="text" name="Nombre" value="@Model.Nombre" />
-    <p>Descripcion</p>
-    <input type="text" name="Descripcion" value="@Model.Descripcion" />
+        <div class="card-body">
 
+            <form method="post" class="mt-3">
 
+                <!-- Nombre -->
+                <div class="mb-3">
+                    <label class="form-label fw-bold">Nombre</label>
+                    <input type="text" name="Nombre" value="@Model.Nombre"
+                           class="form-control border-primary shadow-sm"  />
+                </div>
 
+                <!-- Descripción -->
+                <div class="mb-3">
+                    <label class="form-label fw-bold">Descripción</label>
+                    <input type="text" name="Descripcion" value="@Model.Descripcion"
+                           class="form-control border-primary shadow-sm"  />
+                </div>
 
-    <button type="submit" class="btn btn-primary px-4">
-        <i class="bi bi-check-circle me-1"></i> Guardar
-    </button>
+                <button type="submit" class="btn btn-primary px-4">
+                    <i class="bi bi-check-circle me-1"></i> Guardar
+                </button>
 
-
-
-
-
-</form>
+            </form>

@@ -10,15 +10,19 @@ namespace WebApp.Controllers
 
         public IActionResult Login()
         {
+            HttpContext.Session.Clear();
             return View();
         }
 
         [HttpPost]
         public IActionResult Login(string email , string contrasenia)
         {
+           
             try
             {
                 Usuario unU = _sistema.ObtenerUsuario(email, contrasenia);
+
+
                 if (unU is Gerente)
                 {
                     HttpContext.Session.SetString("rol", "gerente");

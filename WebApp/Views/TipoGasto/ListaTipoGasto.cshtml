@@ -1,18 +1,36 @@
 ﻿@using Dominio
+
 <div class="card-body">
     @if (ViewBag.mensaje != null)
     {
-        <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
             @ViewBag.mensaje
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
     }
-
 </div>
 
-@foreach(TipoGasto item in ViewBag.TiposGastos){
+<div class="container mt-3">
 
-    <p>@item.Nombre  @item.Descripcion    <a href="~/TipoGasto/EliminarTipoGasto?idTipoGasto=@item.Id">Eliminar</a>      </p>
+    <h3 class="text-center mb-4">Tipos de Gasto</h3>
 
-    
-}
+    <div class="list-group">
+
+        @foreach (TipoGasto item in ViewBag.TiposGastos)
+        {
+            <div class="list-group-item d-flex justify-content-between align-items-center">
+
+                <div>
+                    <strong>@item.Nombre</strong><br />
+                    <span class="text-muted">@item.Descripcion</span>
+                </div>
+
+                <a href="~/TipoGasto/EliminarTipoGasto?idTipoGasto=@item.Id"
+                   class="btn btn-danger btn-sm">
+                    Eliminar
+                </a>
+            </div>
+        }
+
+    </div>
+</div>

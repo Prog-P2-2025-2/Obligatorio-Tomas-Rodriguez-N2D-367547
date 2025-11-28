@@ -1,15 +1,19 @@
 ﻿using Dominio;
 using Microsoft.AspNetCore.Mvc;
+using WebApp.Filtros;
 
 namespace WebApp.Controllers
 {
+    [Logueado]
     public class TipoGastoController : Controller
     {
 
 
         private Sistema _sistema = Sistema.Instancia();
-     
+
+        
         [HttpGet]
+        [GerenteAdmin]
         public IActionResult AltaTipoGasto() 
         {
             ViewBag.TiposGastos = _sistema.TiposGastos();
@@ -29,6 +33,7 @@ namespace WebApp.Controllers
             }
         }
         [HttpGet]
+        [GerenteAdmin]
         public IActionResult ListaTipoGasto(string mensaje)
         {
             ViewBag.TiposGastos = _sistema.TiposGastos();

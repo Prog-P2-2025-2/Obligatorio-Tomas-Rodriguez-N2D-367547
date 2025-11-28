@@ -41,23 +41,41 @@ namespace Dominio
             }
 
         }
-        public override bool PagoVigenteEsteMes() { 
-            if (FechaFinal.Year > DateTime.Now.Year) {
-                return true;
+        public override string MensajePago()
+        {
+            return $"Fecha de inicio: {Descripcion}" +
+                $"Fecha de inicio: {FechaInicio.ToString("dd/MM/yyyy")}" +
+                    $"Fecha final: {FechaFinal.ToString("dd/MM/yyyy")}";
+        }
+        public override bool PagoVigenteEsteMes() {
+          
+            DateTime mesInicio = new DateTime(DateTime.Today.Year, DateTime.Today.Month, 1);
+
+           
+            DateTime mesFin = mesInicio.AddMonths(1).AddDays(-1);
+
+            if (this.FechaFinal == new DateTime())
+            {
+                if (this.FechaInicio >= mesInicio && this.FechaInicio <= mesFin)
+                {
+                    return true;
+                }
+
+                return false;
             }
-            if (FechaFinal.Year == DateTime.Now.Year &&  FechaFinal.Month >= DateTime.Now.Month) 
+
+            if (this.FechaInicio <= mesFin && this.FechaFinal >= mesInicio)
             {
                 return true;
             }
-            
-        
+
             return false;
         }
 
         public override DateTime FechaEsteMes()
         {
 
-            return new DateTime(DateTime.Now.Year, DateTime.Now.Month, FechaFinal.Day);
+            return FechaInicio;
         }
         public override int CalcularMesesDeFechas()
         {
@@ -89,18 +107,14 @@ namespace Dominio
             }
             return (decimal)Monto * (decimal)1.03;
         }
-        public override string MensajePago()
-        {           
-            return $"Fecha de inicio: {Descripcion}" +
-                $"Fecha de inicio: {FechaInicio.ToString("dd/MM/yyyy")}" +
-                    $"Fecha final: {FechaFinal.ToString("dd/MM/yyyy")}";
-        }
+    
         public override bool PagoValidoFecha(DateTime fechaInicial, DateTime fechaFinal)
         {
-            if (FechaInicio <= fechaFinal && FechaFinal >= fechaInicial)
+            if (FechaInicio >= fechaInicial && FechaFinal <= fechaFinal)
             {
                 return true;
             }
+            
             if (FechaFinal == new DateTime() && FechaInicio >= fechaInicial)
             {
                 return true;

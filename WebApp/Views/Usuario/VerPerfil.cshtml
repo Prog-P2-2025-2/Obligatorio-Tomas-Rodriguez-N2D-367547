@@ -2,62 +2,85 @@
 @model Usuario
 
 <div class="container mt-4">
-    <div class="card shadow-sm">
+
+    <!-- Card principal -->
+    <div class="card shadow">
+
         <div class="card-header bg-primary text-white">
             <h5 class="mb-0">Datos del Usuario</h5>
         </div>
 
         <div class="card-body">
+
+            <!-- Nombre -->
             <div class="mb-3">
-                <label class="fw-bold">Nombre:</label>
-                <span>@Model.Nombre</span>
+                <label class="fw-bold text-secondary">Nombre:</label>
+                <div class="border rounded p-2 bg-light">@Model.Nombre</div>
+            </div>
+
+            <!-- Apellido -->
+            <div class="mb-3">
+                <label class="fw-bold text-secondary">Apellido:</label>
+                <div class="border rounded p-2 bg-light">@Model.Apellido</div>
+            </div>
+
+            <!-- Email -->
+            <div class="mb-3">
+                <label class="fw-bold text-secondary">Email:</label>
+                <div class="border rounded p-2 bg-light">@Model.Email</div>
+            </div>
+
+            <!-- Fecha de incorporación -->
+            <div class="mb-3">
+                <label class="fw-bold text-secondary">Fecha de Incorporación:</label>
+                <div class="border rounded p-2 bg-light">@Model.FechaIncorporacion.ToString("yyyy-MM-dd")</div>
+            </div>
+
+            <!-- Equipo -->
+            <div class="mb-3">
+                <label class="fw-bold text-secondary">Equipo:</label>
+                <div class="border rounded p-2 bg-light">@Model.UnEquipo.Nombre</div>
+            </div>
+
+            <!-- Gastos -->
+            <div class="mb-3">
+                <label class="fw-bold text-secondary">Gasto Total del Mes (sin descuentos ni recargos):</label>
+                <div class="border rounded p-2 bg-light">@ViewBag.MontoTotal $</div>
             </div>
 
             <div class="mb-3">
-                <label class="fw-bold">Apellido:</label>
-                <span>@Model.Apellido</span>
+                <label class="fw-bold text-secondary">Gasto Total del Mes (con descuentos y recargos):</label>
+                <div class="border rounded p-2 bg-light">@ViewBag.MontoTotalAplicado $</div>
             </div>
 
-            <div class="mb-3">
-                <label class="fw-bold">Email:</label>
-                <span>@Model.Email</span>
-            </div>
-
-            <div class="mb-3">
-                <label class="fw-bold">Fecha de Incorporación:</label>
-                <span>@Model.FechaIncorporacion.ToString("yyyy-MM-dd")</span>
-            </div>
-
-            <div class="mb-3">
-                <label class="fw-bold">Equipo:</label>
-                <span>@Model.UnEquipo.Nombre</span>
-            </div>
-
-            <div class="mb-3">
-                <label class="fw-bold">Gasto Total De Este Mes Sin decuentos y recargos:</label>
-                <span>@ViewBag.MontoTotal$</span>
-            </div
-                        <div class="mb-3">
-                <label class="fw-bold">Gasto Total De Este Mes con decuentos y recargos:</label>
-                <span>@ViewBag.MontoTotalAplicado$</span>
-            </div>
         </div>
 
         @if (Context.Session.GetString("rol") == "gerente")
         {
-            foreach(Usuario item in ViewBag.ListaUsuarioDelEquipo)
-            {
-                if (item is Gerente)
-                {
-                    <p>Getente @item.Nombre @item.Apellido @item.Email @item.FechaIncorporacion.ToString("yyyy-MM-dd")</p>
-                }
-                 if (item is Empleado)
-                {
-                    <p>Empleado @item.Nombre @item.Apellido @item.Email @item.FechaIncorporacion.ToString("yyyy-MM-dd")</p>
-                }
+            <div class="card-footer bg-white">
 
+                <h5 class="text-primary mb-3">Mi Equipo</h5>
 
-            }
+                <div class="list-group">
+
+                    @foreach (Usuario item in ViewBag.ListaUsuarioDelEquipo)
+                    {
+                        <div class="list-group-item list-group-item-action mb-2 shadow-sm rounded">
+
+                            <div class="fw-bold">@item.TipoUsuario()</div>
+
+                            <div class="small text-secondary">
+                                <strong>Nombre:</strong> @item.Nombre @item.Apellido<br />
+                                <strong>Email:</strong> @item.Email<br />
+                                <strong>Fecha de incorporación:</strong> @item.FechaIncorporacion.ToString("yyyy-MM-dd")
+                            </div>
+
+                        </div>
+                    }
+
+                </div>
+            </div>
         }
+
     </div>
 </div>

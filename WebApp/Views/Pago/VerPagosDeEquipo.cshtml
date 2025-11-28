@@ -1,15 +1,27 @@
 ﻿@using Dominio
 
-<p>@ViewBag.Equipo.Nombre</p>
+<p class="fs-4 fw-bold text-center mb-4">@ViewBag.Equipo.Nombre</p>
 
-<form action="~/pago/BuscarPagos?idUsuario=@Context.Session.GetInt32("id")" method="get">
-<p>FechaInicial</p>
-    <input type="date" name="fechaInicial" value="" />
- <p>Fecha Final</p>
-    <input type="date" name="fechaFinal" value="" />
-    <input type="hidden" name="idUsuario" value="@Context.Session.GetInt32("id")" />
-    <button type="submit" class="btn btn-outline-primary">
-        <i class="bi bi-search">BUSCAR</i>
+<form action="~/pago/BuscarPagos?idUsuario=@Context.Session.GetInt32("id")"
+      method="get"
+      class="p-3 border rounded shadow-sm bg-light">
+
+    <div class="mb-3">
+        <label class="form-label fw-bold">Fecha Inicial</label>
+        <input type="date" name="fechaInicial" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label fw-bold">Fecha Final</label>
+        <input type="date" name="fechaFinal" class="form-control" />
+    </div>
+
+    <input type="hidden"
+           name="idUsuario"
+           value="@Context.Session.GetInt32("id")" />
+
+    <button type="submit" class="btn btn-dark w-100">
+        <i class="bi bi-search me-1"></i> Buscar
     </button>
 
 </form>

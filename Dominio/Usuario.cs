@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Dominio
 {
-    public class Usuario
+    public abstract class Usuario: IComparable<Usuario>
     {
         public int Id { get; set; }
         private static int _ultimoId = 1;
@@ -118,6 +118,16 @@ namespace Dominio
         public int IdEquipo()
         {
            return UnEquipo.Id;
+        }
+        public abstract string TipoUsuario();
+        public int CompareTo(Usuario? other)
+        {
+
+            if (other == null)
+            {
+                return -1;
+            }
+            return Email.CompareTo(other.Email) * 1;
         }
     }
 }

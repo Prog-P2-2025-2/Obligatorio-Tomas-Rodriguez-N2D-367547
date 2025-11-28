@@ -42,6 +42,11 @@ namespace Dominio
                 throw new Exception("Numero de recibo no puede ser vacio");
             }        
         }
+        public override string MensajePago()
+        {
+            return $"Numero de recibo: {NroRecibo}\n" +
+                    $"Fecha de Pago: {FechaPago.ToString("dd/MM/yyyy")}\n";
+        }
         public override bool PagoVigenteEsteMes()
         {
             if (FechaPago.Month == DateTime.Now.Month && FechaPago.Year == DateTime.Now.Year)
@@ -57,11 +62,7 @@ namespace Dominio
         {
             return FechaPago;
         }
-        public override string MensajePago()
-        {   
-            return  $"Numero de recibo: {NroRecibo}\n" +
-                    $"Fecha de Pago: {FechaPago.ToString("dd/MM/yyyy")}\n";                                       
-        }
+      
         public override int CalcularMesesDeFechas() 
         {
             return 0;
@@ -79,11 +80,15 @@ namespace Dominio
         }
         public override bool PagoValidoFecha(DateTime fechaInicial, DateTime fechaFinal)
         {
+            if (FechaPago >= fechaInicial && fechaFinal == new DateTime())
+            {
+                return true;
+            }
             if (FechaPago >= fechaInicial && FechaPago <= fechaFinal)
             {
                 return true;
             }
-           
+
             return false;
         }
         public override string TipoDePago()

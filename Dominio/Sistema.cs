@@ -43,6 +43,8 @@ namespace Dominio
             AltaUsuario(new Gerente("Al", "Gomez", "234567890", new DateTime(2025, 10, 21), ObtenerEquipo(2)));
             AltaUsuario(new Gerente("Luis", "Li", "345678901", new DateTime(2025, 10, 22), ObtenerEquipo(3)));
             AltaUsuario(new Gerente("Zo", "Xu", "456789012", new DateTime(2025, 10, 23), ObtenerEquipo(4)));
+          
+           
             AltaUsuario(new Empleado("Ana", "Yu", "567890123", new DateTime(2025, 10, 24), ObtenerEquipo(1)));
             AltaUsuario(new Empleado("Ed", "Ng", "678901234", new DateTime(2025, 10, 25), ObtenerEquipo(2)));
             AltaUsuario(new Empleado("Camila", "Rodriguez", "789012345", new DateTime(2025, 10, 26), ObtenerEquipo(3)));
@@ -61,6 +63,8 @@ namespace Dominio
             AltaUsuario(new Empleado("Teo", "Bonilla", "202345678", new DateTime(2025, 11, 8), ObtenerEquipo(4)));
             AltaUsuario(new Empleado("Is", "Re", "212345678", new DateTime(2025, 11, 9), ObtenerEquipo(1)));
             AltaUsuario(new Empleado("Fabrizio", "Zunino", "222345678", new DateTime(2025, 11, 10), ObtenerEquipo(2)));
+            AltaUsuario(new Gerente("Julieta", "Mendizabal", "123456789", new DateTime(2025, 10, 23), ObtenerEquipo(5)));
+            AltaUsuario(new Gerente("Islam", "makhachev", "123456789", new DateTime(2025, 10, 23), ObtenerEquipo(4)));
 
 
         }
@@ -70,6 +74,7 @@ namespace Dominio
             AltaEquipo(new Equipo("Desarrollo"));
             AltaEquipo(new Equipo("Marketing"));
             AltaEquipo(new Equipo("Soporte Tecnico"));
+            AltaEquipo(new Equipo("Prueba"));
         }
         private void PreCargaTipoPago()
         {
@@ -284,7 +289,7 @@ namespace Dominio
                 }
 
             }
-            return null;
+             throw new Exception("El usuario no existe");
         }
         public Usuario ObtenerUsuario(int id)
         {
@@ -362,6 +367,7 @@ namespace Dominio
                     aux.Add(item);
                 }
             }
+            if (aux.Count == 0) { return null; }
             aux.Sort();
             return aux;
         }
@@ -484,6 +490,8 @@ namespace Dominio
                     aux.Add(item);
                 }
             }
+            if (aux.Count == 0) { return null; }
+            aux.Sort();
             return aux;
         }
         public List<Pago> BuscarPagosPorFechas(DateTime fechaInicial, DateTime fechaFinal, int idUsuario)
@@ -500,6 +508,7 @@ namespace Dominio
                     }
                 }
             }
+            if (aux.Count == 0) { return null; }
 
             return aux;
         }
@@ -527,7 +536,7 @@ namespace Dominio
                     aux.Add(item);
                 }
             }
-
+            aux.Sort();
             return aux;
         }
 
